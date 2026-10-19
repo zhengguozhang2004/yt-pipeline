@@ -1,0 +1,53 @@
+name: download-videos
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: '视频链接（每行一个）'
+        required: true
+  push:
+    paths:
+      - 'downloads/**'
+
+permissions:
+  contents: write
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 安装 yt-dlp
+        run: pip install -U yt-dlp
+      - name: 解析链接
+        id: urls
+        run: |
+          if [ -f downloads/urls.txt ]; then
+            URLS=$(grep -v '^#' downloads/urls.txt | tr '\n' '|' | sed 's/|$//')
+          else
+            URLS=$(echo "${{ github.event.inputs.urls }}" | tr '\n' '|' | sed 's/|$//')
+          fi
+          echo "URLS=$URLS" >> $GITHUB_OUTPUT
+          echo "解析到链接: $URLS"
+      - name: 下载视频
+        run: |
+          mkdir -p out
+          IFS='|' read -ra ARR <<< "${{ steps.urls.outputs.URLS }}"
+          for u in "${ARR[@]}"; do
+            [ -z "$u" ] && continue
+            echo "==> $u"
+            yt-dlp --no-warnings -f "bestvideo+bestaudio/best" --merge-output-format mp4 \
+              -o "out/%(title).150s.%(ext)s" "$u"
+          done
+          ls -la out/
+      - name: 打包并发布 release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          zip -r videos.zip out/
+          gh release delete latest --yes 2>/dev/null || true
+          gh release create latest videos.zip --title "视频下载" --notes "自动下载的视频文件"
+          echo "下载地址: https://github.com/${{ github.repository }}/releases/download/latest/videos.zip"
