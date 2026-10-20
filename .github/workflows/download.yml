@@ -27,9 +27,10 @@ jobs:
           fi
           echo "URLS=$URLS" >> $GITHUB_OUTPUT
           echo "解析到链接: $URLS"
-      - name: 下载视频（Cobalt → Invidious → Piped 三通道）
+      - name: 下载视频（yt-dlp 全客户端 → 三通道）
         run: |
           set +e
+          pip install -U yt-dlp 2>/dev/null || true
           mkdir -p out
           IFS='|' read -ra ARR <<< "${{ steps.urls.outputs.URLS }}"
           for u in "${ARR[@]}"; do
@@ -37,6 +38,22 @@ jobs:
             echo "==> $u" | tee -a out/download.log
             VID=$(echo "$u" | grep -oP 'v=\K[^&]+' || true)
             DONE=0
+            # 通道0: yt-dlp 全客户端尝试
+            if echo "$u" | grep -q 'youtube'; then
+              BEFORE=$(ls out/*.mp4 2>/dev/null | wc -l)
+              for CLIENT in web_creator web_safari mweb tv_embedded android_vr; do
+                yt-dlp --no-warnings --extractor-args "youtube:player_client=$CLIENT;youtube:player_skip=webpage,configs" \
+                  -f "bestvideo+bestaudio/best" --merge-output-format mp4 \
+                  -o "out/%(title).150s.%(ext)s" "$u" 2>&1 | tee -a out/download.log
+                AFTER=$(ls out/*.mp4 2>/dev/null | wc -l)
+                if [ "$AFTER" -gt "$BEFORE" ]; then
+                  echo "[yt-dlp:$CLIENT] 成功" | tee -a out/download.log
+                  DONE=1
+                  break
+                fi
+                echo "[yt-dlp:$CLIENT] 失败" | tee -a out/download.log
+              done
+            fi
             # 通道1: Cobalt API v10（由其服务器处理 YouTube 验证）
             RES=$(curl -s -m 60 -H 'Accept: application/json' -H 'Content-Type: application/json' \
               -X POST -d "{\"url\":\"$u\",\"downloadMode\":\"auto\",\"videoQuality\":\"720\"}" \
