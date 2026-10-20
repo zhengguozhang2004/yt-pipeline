@@ -26,7 +26,7 @@ jobs:
         id: urls
         run: |
           if [ -f downloads/urls.txt ]; then
-            URLS=$(grep -v '^#' downloads/urls.txt | tr '\n' '|' | sed 's/|$//')
+            URLS=$(grep -v '^#' downloads/urls.txt | grep -v '^$' | tr '\n' '|' | sed 's/|$//')
           else
             URLS=$(echo "${{ github.event.inputs.urls }}" | tr '\n' '|' | sed 's/|$//')
           fi
@@ -38,10 +38,13 @@ jobs:
           IFS='|' read -ra ARR <<< "${{ steps.urls.outputs.URLS }}"
           for u in "${ARR[@]}"; do
             [ -z "$u" ] && continue
-            echo "==> $u"
-            yt-dlp --no-warnings -f "bestvideo+bestaudio/best" --merge-output-format mp4 \
-              -o "out/%(title).150s.%(ext)s" "$u"
+            echo "==> $u" | tee -a out/download.log
+            yt-dlp --no-warnings \
+              --extractor-args "youtube:player_client=android,tv,ios,web_embedded;youtube:player_skip=webpage,configs" \
+              -f "bestvideo+bestaudio/best" --merge-output-format mp4 \
+              -o "out/%(title).150s.%(ext)s" "$u" 2>&1 | tee -a out/download.log || true
           done
+          echo "===== out 目录 ====="
           ls -la out/
       - name: 打包并发布 release
         env:
