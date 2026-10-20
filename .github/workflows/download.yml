@@ -17,11 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: 安装 yt-dlp
-        run: pip install -U yt-dlp
       - name: 解析链接
         id: urls
         run: |
@@ -32,17 +27,53 @@ jobs:
           fi
           echo "URLS=$URLS" >> $GITHUB_OUTPUT
           echo "解析到链接: $URLS"
-      - name: 下载视频
+      - name: 下载视频（Cobalt → Invidious → Piped 三通道）
         run: |
           mkdir -p out
           IFS='|' read -ra ARR <<< "${{ steps.urls.outputs.URLS }}"
           for u in "${ARR[@]}"; do
             [ -z "$u" ] && continue
             echo "==> $u" | tee -a out/download.log
-            yt-dlp --no-warnings \
-              --extractor-args "youtube:player_client=android,tv,ios,web_embedded;youtube:player_skip=webpage,configs" \
-              -f "bestvideo+bestaudio/best" --merge-output-format mp4 \
-              -o "out/%(title).150s.%(ext)s" "$u" 2>&1 | tee -a out/download.log || true
+            VID=$(echo "$u" | grep -oP 'v=\K[^&]+' || true)
+            DONE=0
+            # 通道1: Cobalt API（由其服务器处理 YouTube 验证）
+            RES=$(curl -s -m 60 -H 'Accept: application/json' -H 'Content-Type: application/json' \
+              -X POST -d "{\"url\":\"$u\",\"downloadMode\":\"auto\",\"videoQuality\":\"720\"}" \
+              https://api.cobalt.tools/api/json 2>/dev/null || true)
+            DLURL=$(echo "$RES" | jq -r '.url // empty' 2>/dev/null)
+            if [ -n "$DLURL" ]; then
+              NAME=$(echo "$RES" | jq -r '.filename // "video"' 2>/dev/null)
+              if curl -s -L -m 600 -o "out/${NAME}.mp4" "$DLURL"; then
+                echo "[cobalt] 成功: ${NAME}" | tee -a out/download.log
+                DONE=1
+              fi
+            else
+              echo "[cobalt] 无结果: $(echo "$RES" | jq -r '.text // empty' | head -c 100)" | tee -a out/download.log
+            fi
+            # 通道2: Invidious 实例（本地转流）
+            if [ "$DONE" != "1" ] && [ -n "$VID" ]; then
+              for INST in https://yewtu.be https://inv.nadeko.net https://invidious.nerdvpn.de https://iv.ggtyler.dev https://invidious.f5.si; do
+                DATA=$(curl -s -m 60 "$INST/api/v1/videos/$VID?local=true&fields=videoStreams,title" 2>/dev/null || true)
+                TITLE=$(echo "$DATA" | jq -r '.title // empty' 2>/dev/null)
+                SURL=$(echo "$DATA" | jq -r '[.videoStreams[]?] | sort_by(.bitrate) | last | .url // empty' 2>/dev/null)
+                if [ -n "$SURL" ] && [ -n "$TITLE" ] && curl -s -L -m 600 -o "out/${TITLE}.mp4" "$SURL"; then
+                  echo "[invidious:$INST] 成功: $TITLE" | tee -a out/download.log
+                  DONE=1
+                  break
+                fi
+              done
+            fi
+            # 通道3: Piped API
+            if [ "$DONE" != "1" ] && [ -n "$VID" ]; then
+              DATA=$(curl -s -m 60 "https://pipedapi.kavin.rocks/streams/$VID" 2>/dev/null || true)
+              TITLE=$(echo "$DATA" | jq -r '.title // empty' 2>/dev/null)
+              SURL=$(echo "$DATA" | jq -r '[.videoStreams[]?] | sort_by(.bitrate) | last | .url // empty' 2>/dev/null)
+              if [ -n "$SURL" ] && [ -n "$TITLE" ] && curl -s -L -m 600 -o "out/${TITLE}.mp4" "$SURL"; then
+                echo "[piped] 成功: $TITLE" | tee -a out/download.log
+                DONE=1
+              fi
+            fi
+            [ "$DONE" = "1" ] || echo "[FAIL] $u" | tee -a out/download.log
           done
           echo "===== out 目录 ====="
           ls -la out/
