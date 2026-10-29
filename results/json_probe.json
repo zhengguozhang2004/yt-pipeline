@@ -1,0 +1,34 @@
+{
+  "libgen.li": {
+    "edition": {
+      "error": "No Request keys"
+    },
+    "libinfo": {
+      "error": "No Request keys"
+    }
+  },
+  "libgen.la": {
+    "edition": {
+      "error": "No Request keys"
+    },
+    "libinfo": {
+      "error": "No Request keys"
+    }
+  },
+  "libgen.bz": {
+    "edition": {
+      "error": "No Request keys"
+    },
+    "libinfo": {
+      "error": "No Request keys"
+    }
+  },
+  "libgen.vg": {
+    "edition": {
+      "error": "No Request keys"
+    },
+    "libinfo": {
+      "error": "No Request keys"
+    }
+  }
+}
