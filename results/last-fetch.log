@@ -1,97 +1,147 @@
-================================================================
-Cloud Book Downloader v4
-  book_id: 1509289
-  query  : Motorcycle Dynamics Cossalter
-================================================================
+===== v5 edition page probe =====
 
-===== host: libgen.li =====
-  GET https://libgen.li/ads.php?id=1509289
-    -> 404 ctype=text/html; charset=UTF-8 len=3532
-  GET https://libgen.li/ads.php?md5=1509289
-    -> 404 ctype=text/html; charset=UTF-8 len=3532
-  GET https://libgen.li/edition.php?id=1509289
-    -> 200 ctype=text/html; charset=UTF-8 len=22959
-    candidate links: 0
-  GET https://libgen.li/book/index.php?md5=1509289
-    -> 404 ctype=text/html; charset=iso-8859-1 len=196
-  GET https://libgen.li/get.php?id=1509289
-    -> 500 ctype=text/html; charset=UTF-8 len=48
-  GET https://libgen.li/get.php?md5=1509289
-    -> 500 ctype=text/html; charset=UTF-8 len=48
+===== https://libgen.li/edition.php?id=1509289 =====
+  status=200 len=22959
+  md5 candidates: []
+  total <a> links: 74
+    [] /index.php
+    [NEWS (current)] /community/app.php/article/news
+    [FORUM (current)] /community/
+    [LOGIN] /community/ucp.php?mode=login
+    [Register] /community/ucp.php?mode=register
+    [Mirrors] /mirrors.php
+    [TOR] http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/
+    [Torrents] /torrents/
+    [Torrents status] https://ipdl.cat/data/torrents.html
+    [Usenet (*.nzb)] /nzb/
+    [Soft] /soft/
+    [Libgen] /dirlist.php?dir=dbdumps
+    [libgen.rs (gen.lib.rus.ec)] http://libgen.rs/dbdumps/
+    [UPLOAD] librarian.php
+    [FTP] ftp://ftp.libgen.bz/upload/
+    [LAST] /index.php?req=fmode:last&topics1=all
+    [Files] /index.php?req=fmode:last&topics1=all
+    [Libgen] /index.php?req=fmode:last&topics%5B%5D=l
+    [Scientific Articles] /index.php?req=fmode:last&topics%5B%5D=a
+    [Fiction] /index.php?req=fmode:last&topics%5B%5D=f
+    [Comics] /index.php?req=fmode:last&topics%5B%5D=c
+    [Magazines] /index.php?req=fmode:last&topics%5B%5D=m
+    [Standards] /index.php?req=fmode:last&topics%5B%5D=s
+    [Fiction RUS] /index.php?req=fmode:last&topics%5B%5D=r
+    [Editions] /index.php?req=mode:last&curtab=e
+    [Series] /index.php?req=mode:last&curtab=s
+    [Publishers] /index.php?req=mode:last&curtab=p
+    [Authors] /index.php?req=mode:last&curtab=a
+    [Works] /index.php?req=mode:last&curtab=w
+    [API] json.php
+    [RSS] rss.php
+    [Top 100 users] top.php
+    [Stats] stat.php
+    [Topics] topics.php
+    [Batch search] batchsearchindex.php
+    [Bibliographic services] biblioservice.php
+    [Libgen librarian for desktop] https://wiki.mhut.org/software:libgen_desktop
+    [Source (PHP)] /code/
+    [LG soft] /soft/
+    [Full text search] https://z-library.se/fulltext/
+  tables: 0
+  js md5: []
+  ads.php refs: []
 
-===== host: libgen.la =====
-  GET https://libgen.la/ads.php?id=1509289
-    -> 404 ctype=text/html; charset=UTF-8 len=3899
-  GET https://libgen.la/ads.php?md5=1509289
-    -> 404 ctype=text/html; charset=UTF-8 len=3899
-  GET https://libgen.la/edition.php?id=1509289
-    -> 200 ctype=text/html; charset=UTF-8 len=23559
-    candidate links: 1
-      https://libgen.la/cdn-cgi/l/email-protection
-    TRY https://libgen.la/cdn-cgi/l/email-protection
-      -> 404 ctype=text/html len=None
-  GET https://libgen.la/book/index.php?md5=1509289
-    -> 404 ctype=text/html; charset=iso-8859-1 len=563
-  GET https://libgen.la/get.php?id=1509289
-    -> 500 ctype=text/html; charset=UTF-8 len=415
-  GET https://libgen.la/get.php?md5=1509289
-    -> 500 ctype=text/html; charset=UTF-8 len=415
+===== https://libgen.la/edition.php?id=1509289 =====
+  status=200 len=23559
+  md5 candidates: ['838e90ff2e4440c480e8832c47cabce5']
+  total <a> links: 75
+    [] /index.php
+    [NEWS (current)] /community/app.php/article/news
+    [FORUM (current)] /community/
+    [LOGIN] /community/ucp.php?mode=login
+    [Register] /community/ucp.php?mode=register
+    [Mirrors] /mirrors.php
+    [TOR] http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/
+    [Torrents] /torrents/
+    [Torrents status] https://ipdl.cat/data/torrents.html
+    [Usenet (*.nzb)] /nzb/
+    [Soft] /soft/
+    [Libgen] /dirlist.php?dir=dbdumps
+    [libgen.rs (gen.lib.rus.ec)] http://libgen.rs/dbdumps/
+    [UPLOAD] librarian.php
+    [FTP] ftp://ftp.libgen.bz/upload/
+    [LAST] /index.php?req=fmode:last&topics1=all
+    [Files] /index.php?req=fmode:last&topics1=all
+    [Libgen] /index.php?req=fmode:last&topics%5B%5D=l
+    [Scientific Articles] /index.php?req=fmode:last&topics%5B%5D=a
+    [Fiction] /index.php?req=fmode:last&topics%5B%5D=f
+    [Comics] /index.php?req=fmode:last&topics%5B%5D=c
+    [Magazines] /index.php?req=fmode:last&topics%5B%5D=m
+    [Standards] /index.php?req=fmode:last&topics%5B%5D=s
+    [Fiction RUS] /index.php?req=fmode:last&topics%5B%5D=r
+    [Editions] /index.php?req=mode:last&curtab=e
+    [Series] /index.php?req=mode:last&curtab=s
+    [Publishers] /index.php?req=mode:last&curtab=p
+    [Authors] /index.php?req=mode:last&curtab=a
+    [Works] /index.php?req=mode:last&curtab=w
+    [API] json.php
+    [RSS] rss.php
+    [Top 100 users] top.php
+    [Stats] stat.php
+    [Topics] topics.php
+    [Batch search] batchsearchindex.php
+    [Bibliographic services] biblioservice.php
+    [Libgen librarian for desktop] https://wiki.mhut.org/software:libgen_desktop
+    [Source (PHP)] /code/
+    [LG soft] /soft/
+    [Full text search] https://z-library.se/fulltext/
+  tables: 0
+  js md5: []
+  ads.php refs: []
 
-===== host: libgen.vg =====
-  GET https://libgen.vg/ads.php?id=1509289
-    endpoint err: ConnectionError: HTTPSConnectionPool(host='libgen.vg', port=443): Read timed out.
-  GET https://libgen.vg/ads.php?md5=1509289
-    -> 404 ctype=text/html; charset=UTF-8 len=3532
-  GET https://libgen.vg/edition.php?id=1509289
-    -> 200 ctype=text/html; charset=UTF-8 len=22959
-    candidate links: 0
-  GET https://libgen.vg/book/index.php?md5=1509289
-    -> 404 ctype=text/html; charset=iso-8859-1 len=196
-  GET https://libgen.vg/get.php?id=1509289
-    -> 500 ctype=text/html; charset=UTF-8 len=48
-  GET https://libgen.vg/get.php?md5=1509289
-    -> 500 ctype=text/html; charset=UTF-8 len=48
+===== https://libgen.bz/edition.php?id=1509289 =====
+  status=200 len=22959
+  md5 candidates: []
+  total <a> links: 74
+    [] /index.php
+    [NEWS (current)] /community/app.php/article/news
+    [FORUM (current)] /community/
+    [LOGIN] /community/ucp.php?mode=login
+    [Register] /community/ucp.php?mode=register
+    [Mirrors] /mirrors.php
+    [TOR] http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/
+    [Torrents] /torrents/
+    [Torrents status] https://ipdl.cat/data/torrents.html
+    [Usenet (*.nzb)] /nzb/
+    [Soft] /soft/
+    [Libgen] /dirlist.php?dir=dbdumps
+    [libgen.rs (gen.lib.rus.ec)] http://libgen.rs/dbdumps/
+    [UPLOAD] librarian.php
+    [FTP] ftp://ftp.libgen.bz/upload/
+    [LAST] /index.php?req=fmode:last&topics1=all
+    [Files] /index.php?req=fmode:last&topics1=all
+    [Libgen] /index.php?req=fmode:last&topics%5B%5D=l
+    [Scientific Articles] /index.php?req=fmode:last&topics%5B%5D=a
+    [Fiction] /index.php?req=fmode:last&topics%5B%5D=f
+    [Comics] /index.php?req=fmode:last&topics%5B%5D=c
+    [Magazines] /index.php?req=fmode:last&topics%5B%5D=m
+    [Standards] /index.php?req=fmode:last&topics%5B%5D=s
+    [Fiction RUS] /index.php?req=fmode:last&topics%5B%5D=r
+    [Editions] /index.php?req=mode:last&curtab=e
+    [Series] /index.php?req=mode:last&curtab=s
+    [Publishers] /index.php?req=mode:last&curtab=p
+    [Authors] /index.php?req=mode:last&curtab=a
+    [Works] /index.php?req=mode:last&curtab=w
+    [API] json.php
+    [RSS] rss.php
+    [Top 100 users] top.php
+    [Stats] stat.php
+    [Topics] topics.php
+    [Batch search] batchsearchindex.php
+    [Bibliographic services] biblioservice.php
+    [Libgen librarian for desktop] https://wiki.mhut.org/software:libgen_desktop
+    [Source (PHP)] /code/
+    [LG soft] /soft/
+    [Full text search] https://z-library.se/fulltext/
+  tables: 0
+  js md5: []
+  ads.php refs: []
 
-===== host: libgen.bz =====
-  GET https://libgen.bz/ads.php?id=1509289
-    -> 404 ctype=text/html; charset=UTF-8 len=3532
-  GET https://libgen.bz/ads.php?md5=1509289
-    -> 404 ctype=text/html; charset=UTF-8 len=3532
-  GET https://libgen.bz/edition.php?id=1509289
-    -> 200 ctype=text/html; charset=UTF-8 len=22959
-    candidate links: 0
-  GET https://libgen.bz/book/index.php?md5=1509289
-    -> 404 ctype=text/html; charset=iso-8859-1 len=196
-  GET https://libgen.bz/get.php?id=1509289
-    -> 500 ctype=text/html; charset=UTF-8 len=48
-  GET https://libgen.bz/get.php?md5=1509289
-    -> 500 ctype=text/html; charset=UTF-8 len=48
-
-===== host: libgen.onl =====
-  GET https://libgen.onl/ads.php?id=1509289
-    -> 404 ctype=text/html; charset=UTF-8 len=67310
-  GET https://libgen.onl/ads.php?md5=1509289
-    -> 404 ctype=text/html; charset=UTF-8 len=67310
-  GET https://libgen.onl/edition.php?id=1509289
-    -> 404 ctype=text/html; charset=UTF-8 len=67310
-  GET https://libgen.onl/book/index.php?md5=1509289
-    -> 404 ctype=text/html; charset=UTF-8 len=67310
-  GET https://libgen.onl/get.php?id=1509289
-    -> 404 ctype=text/html; charset=UTF-8 len=67310
-  GET https://libgen.onl/get.php?md5=1509289
-    -> 404 ctype=text/html; charset=UTF-8 len=67310
-
-===== host: libgen.ee =====
-  GET https://libgen.ee/ads.php?id=1509289
-    -> 404 ctype=text/html; charset=iso-8859-1 len=638
-  GET https://libgen.ee/ads.php?md5=1509289
-    -> 404 ctype=text/html; charset=iso-8859-1 len=638
-  GET https://libgen.ee/edition.php?id=1509289
-    -> 404 ctype=text/html; charset=iso-8859-1 len=638
-  GET https://libgen.ee/book/index.php?md5=1509289
-    -> 404 ctype=text/html; charset=iso-8859-1 len=638
-  GET https://libgen.ee/get.php?id=1509289
-    -> 404 ctype=text/html; charset=iso-8859-1 len=638
-  GET https://libgen.ee/get.php?md5=1509289
-    -> 404 ctype=text/html; charset=iso-8859-1 len=638
-[FAIL] download: all hosts/endpoints failed
+written out/probe.json
