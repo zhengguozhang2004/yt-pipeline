@@ -1,9 +1,97 @@
-==============================================================
-Cloud Book Downloader v3
+================================================================
+Cloud Book Downloader v4
   book_id: 1509289
   query  : Motorcycle Dynamics Cossalter
-==============================================================
-  matched row on libgen.li: md5=None
-[OK ] find_row: {'host': 'libgen.li', 'md5': None, 'row': 'Motorcycle Dynamics Second Edition 1430308613; 9781430308614 b l 1509289'}
+================================================================
 
-no file downloaded
+===== host: libgen.li =====
+  GET https://libgen.li/ads.php?id=1509289
+    -> 404 ctype=text/html; charset=UTF-8 len=3532
+  GET https://libgen.li/ads.php?md5=1509289
+    -> 404 ctype=text/html; charset=UTF-8 len=3532
+  GET https://libgen.li/edition.php?id=1509289
+    -> 200 ctype=text/html; charset=UTF-8 len=22959
+    candidate links: 0
+  GET https://libgen.li/book/index.php?md5=1509289
+    -> 404 ctype=text/html; charset=iso-8859-1 len=196
+  GET https://libgen.li/get.php?id=1509289
+    -> 500 ctype=text/html; charset=UTF-8 len=48
+  GET https://libgen.li/get.php?md5=1509289
+    -> 500 ctype=text/html; charset=UTF-8 len=48
+
+===== host: libgen.la =====
+  GET https://libgen.la/ads.php?id=1509289
+    -> 404 ctype=text/html; charset=UTF-8 len=3899
+  GET https://libgen.la/ads.php?md5=1509289
+    -> 404 ctype=text/html; charset=UTF-8 len=3899
+  GET https://libgen.la/edition.php?id=1509289
+    -> 200 ctype=text/html; charset=UTF-8 len=23559
+    candidate links: 1
+      https://libgen.la/cdn-cgi/l/email-protection
+    TRY https://libgen.la/cdn-cgi/l/email-protection
+      -> 404 ctype=text/html len=None
+  GET https://libgen.la/book/index.php?md5=1509289
+    -> 404 ctype=text/html; charset=iso-8859-1 len=563
+  GET https://libgen.la/get.php?id=1509289
+    -> 500 ctype=text/html; charset=UTF-8 len=415
+  GET https://libgen.la/get.php?md5=1509289
+    -> 500 ctype=text/html; charset=UTF-8 len=415
+
+===== host: libgen.vg =====
+  GET https://libgen.vg/ads.php?id=1509289
+    endpoint err: ConnectionError: HTTPSConnectionPool(host='libgen.vg', port=443): Read timed out.
+  GET https://libgen.vg/ads.php?md5=1509289
+    -> 404 ctype=text/html; charset=UTF-8 len=3532
+  GET https://libgen.vg/edition.php?id=1509289
+    -> 200 ctype=text/html; charset=UTF-8 len=22959
+    candidate links: 0
+  GET https://libgen.vg/book/index.php?md5=1509289
+    -> 404 ctype=text/html; charset=iso-8859-1 len=196
+  GET https://libgen.vg/get.php?id=1509289
+    -> 500 ctype=text/html; charset=UTF-8 len=48
+  GET https://libgen.vg/get.php?md5=1509289
+    -> 500 ctype=text/html; charset=UTF-8 len=48
+
+===== host: libgen.bz =====
+  GET https://libgen.bz/ads.php?id=1509289
+    -> 404 ctype=text/html; charset=UTF-8 len=3532
+  GET https://libgen.bz/ads.php?md5=1509289
+    -> 404 ctype=text/html; charset=UTF-8 len=3532
+  GET https://libgen.bz/edition.php?id=1509289
+    -> 200 ctype=text/html; charset=UTF-8 len=22959
+    candidate links: 0
+  GET https://libgen.bz/book/index.php?md5=1509289
+    -> 404 ctype=text/html; charset=iso-8859-1 len=196
+  GET https://libgen.bz/get.php?id=1509289
+    -> 500 ctype=text/html; charset=UTF-8 len=48
+  GET https://libgen.bz/get.php?md5=1509289
+    -> 500 ctype=text/html; charset=UTF-8 len=48
+
+===== host: libgen.onl =====
+  GET https://libgen.onl/ads.php?id=1509289
+    -> 404 ctype=text/html; charset=UTF-8 len=67310
+  GET https://libgen.onl/ads.php?md5=1509289
+    -> 404 ctype=text/html; charset=UTF-8 len=67310
+  GET https://libgen.onl/edition.php?id=1509289
+    -> 404 ctype=text/html; charset=UTF-8 len=67310
+  GET https://libgen.onl/book/index.php?md5=1509289
+    -> 404 ctype=text/html; charset=UTF-8 len=67310
+  GET https://libgen.onl/get.php?id=1509289
+    -> 404 ctype=text/html; charset=UTF-8 len=67310
+  GET https://libgen.onl/get.php?md5=1509289
+    -> 404 ctype=text/html; charset=UTF-8 len=67310
+
+===== host: libgen.ee =====
+  GET https://libgen.ee/ads.php?id=1509289
+    -> 404 ctype=text/html; charset=iso-8859-1 len=638
+  GET https://libgen.ee/ads.php?md5=1509289
+    -> 404 ctype=text/html; charset=iso-8859-1 len=638
+  GET https://libgen.ee/edition.php?id=1509289
+    -> 404 ctype=text/html; charset=iso-8859-1 len=638
+  GET https://libgen.ee/book/index.php?md5=1509289
+    -> 404 ctype=text/html; charset=iso-8859-1 len=638
+  GET https://libgen.ee/get.php?id=1509289
+    -> 404 ctype=text/html; charset=iso-8859-1 len=638
+  GET https://libgen.ee/get.php?md5=1509289
+    -> 404 ctype=text/html; charset=iso-8859-1 len=638
+[FAIL] download: all hosts/endpoints failed

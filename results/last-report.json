@@ -1,12 +1,17 @@
 {
   "book_id": "1509289",
-  "query": "Motorcycle Dynamics Cossalter",
   "steps": [
     {
-      "step": "find_row",
-      "ok": true,
-      "detail": "{'host': 'libgen.li', 'md5': None, 'row': 'Motorcycle Dynamics Second Edition 1430308613; 9781430308614 b l 1509289'}"
+      "step": "download",
+      "ok": false,
+      "detail": "all hosts/endpoints failed"
     }
   ],
-  "files": []
+  "files": [],
+  "links": [
+    {
+      "endpoint": "https://libgen.la/edition.php?id=1509289",
+      "link": "https://libgen.la/cdn-cgi/l/email-protection"
+    }
+  ]
 }
