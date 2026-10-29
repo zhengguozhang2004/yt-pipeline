@@ -47,7 +47,7 @@ jobs:
           ISBN: ${{ github.event.inputs.isbn }}
         run: |
           mkdir -p out
-          python scripts/fetch_book6.py 2>&1 | tee out/fetch.log
+          python scripts/probe_ads.py 2>&1 | tee out/fetch.log
           echo "---- done ----"
 
       - name: Inspect results
