@@ -1,22 +1,18 @@
 name: fetch-book
 
-# 云端书籍获取管道
-# Actions 运行在 GitHub（境外 IP），可访问国内被墙的 libgen / Anna's / archive.org
-# 国内通过 GitHub API 写入任务、读取 artifact 结果
-
 on:
   workflow_dispatch:
     inputs:
       query:
-        description: '搜索关键词（书名/作者）'
+        description: '搜索关键词'
         required: true
         default: 'Motorcycle Dynamics Cossalter'
-      mode:
-        description: '模式: search(只搜索) / fetch(搜索并下载)'
-        required: true
-        default: 'search'
+      book_id:
+        description: 'libgen 记录 ID（可选）'
+        required: false
+        default: ''
       isbn:
-        description: '可选：ISBN 精确检索'
+        description: 'ISBN（可选）'
         required: false
         default: ''
 
@@ -26,13 +22,11 @@ permissions:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
@@ -41,40 +35,82 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4
 
-      - name: Run book fetcher
+      - name: Run downloader
         env:
           QUERY: ${{ github.event.inputs.query }}
-          MODE: ${{ github.event.inputs.mode }}
+          BOOK_ID: ${{ github.event.inputs.book_id }}
           ISBN: ${{ github.event.inputs.isbn }}
         run: |
           mkdir -p out
-          python scripts/fetch_book2.py 2>&1 | tee out/fetch.log
-          echo "---- exit: $? ----"
+          python scripts/fetch_book3.py 2>&1 | tee out/fetch.log
+          echo "---- done ----"
 
-      - name: List results
+      - name: Inspect results
         if: always()
         run: |
           echo "=== out/ ==="
           ls -la out/ || true
-          echo "=== sizes ==="
-          du -h out/* 2>/dev/null || true
+          echo "=== file types ==="
+          for f in out/*.pdf out/*.epub out/*.djvu; do
+            [ -f "$f" ] && file "$f" || true
+          done
 
-      - name: Upload artifacts
+      - name: Upload artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: book-result
+          name: book-files
           path: out/
           retention-days: 7
 
-      - name: Commit report to repo
+      # 关键：把下载到的书以 base64 分片提交到仓库（绕过 artifact 下载需要登录的限制）
+      - name: Publish book to repo (base64 chunks)
+        if: always()
+        run: |
+          python - <<'PYEOF'
+          import base64, glob, json, os, subprocess, sys
+
+          files = []
+          for pat in ("out/*.pdf", "out/*.epub", "out/*.djvu", "out/*.txt"):
+              files.extend(glob.glob(pat))
+
+          os.makedirs("results", exist_ok=True)
+
+          meta = {"files": []}
+          for fp in files:
+              size = os.path.getsize(fp)
+              if size < 1000:
+                  continue
+              name = os.path.basename(fp)
+              meta["files"].append({"name": name, "size": size})
+              # 分片 base64，每片 4MB
+              chunk_size = 4 * 1024 * 1024
+              idx = 0
+              with open(fp, "rb") as f:
+                  while True:
+                      chunk = f.read(chunk_size)
+                      if not chunk:
+                          break
+                      b64 = base64.b64encode(chunk).decode("ascii")
+                      out = f"results/{name}.part{idx:03d}.b64"
+                      with open(out, "w") as g:
+                          g.write(b64)
+                      print(f"wrote {out} ({len(b64)} chars)")
+                      idx += 1
+              meta["files"][-1]["parts"] = idx
+
+          with open("results/manifest.json", "w", encoding="utf-8") as f:
+              json.dump(meta, f, indent=2)
+          print("manifest:", json.dumps(meta, indent=2))
+          PYEOF
+
+      - name: Commit results
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          mkdir -p results
           cp out/fetch.log "results/last-fetch.log" 2>/dev/null || true
-          cp out/report2.json "results/last-report.json" 2>/dev/null || true
+          cp out/report3.json "results/last-report.json" 2>/dev/null || true
           git add results/ 2>/dev/null || true
-          git commit -m "fetch-book report $(date -u +%Y%m%dT%H%M%SZ)" 2>/dev/null || echo "nothing to commit"
-          git push 2>/dev/null || echo "push skipped"
+          git commit -m "book fetch $(date -u +%Y%m%dT%H%M%SZ)" 2>/dev/null || echo "nothing"
+          git push 2>/dev/null || echo "push failed"
