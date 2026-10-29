@@ -11,6 +11,10 @@ on:
         description: 'libgen 记录 ID（可选）'
         required: false
         default: ''
+      book_md5:
+        description: 'libgen MD5'
+        required: false
+        default: ''
       isbn:
         description: 'ISBN（可选）'
         required: false
@@ -39,10 +43,11 @@ jobs:
         env:
           QUERY: ${{ github.event.inputs.query }}
           BOOK_ID: ${{ github.event.inputs.book_id }}
+          BOOK_MD5: ${{ github.event.inputs.book_md5 }}
           ISBN: ${{ github.event.inputs.isbn }}
         run: |
           mkdir -p out
-          python scripts/probe_edition.py 2>&1 | tee out/fetch.log
+          python scripts/fetch_book6.py 2>&1 | tee out/fetch.log
           echo "---- done ----"
 
       - name: Inspect results
@@ -110,7 +115,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           cp out/fetch.log "results/last-fetch.log" 2>/dev/null || true
-          cp out/probe.json "results/last-report.json" 2>/dev/null || true
+          cp out/report6.json "results/last-report.json" 2>/dev/null || true
           git add results/ 2>/dev/null || true
           git commit -m "book fetch $(date -u +%Y%m%dT%H%M%SZ)" 2>/dev/null || echo "nothing"
           git push 2>/dev/null || echo "push failed"
