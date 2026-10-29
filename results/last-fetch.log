@@ -1,147 +1,36 @@
-===== v5 edition page probe =====
+================================================================
+Cloud Book Downloader v6
+  md5: 838e90ff2e4440c480e8832c47cabce5
+================================================================
 
-===== https://libgen.li/edition.php?id=1509289 =====
-  status=200 len=22959
-  md5 candidates: []
-  total <a> links: 74
-    [] /index.php
-    [NEWS (current)] /community/app.php/article/news
-    [FORUM (current)] /community/
-    [LOGIN] /community/ucp.php?mode=login
-    [Register] /community/ucp.php?mode=register
-    [Mirrors] /mirrors.php
-    [TOR] http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/
-    [Torrents] /torrents/
-    [Torrents status] https://ipdl.cat/data/torrents.html
-    [Usenet (*.nzb)] /nzb/
-    [Soft] /soft/
-    [Libgen] /dirlist.php?dir=dbdumps
-    [libgen.rs (gen.lib.rus.ec)] http://libgen.rs/dbdumps/
-    [UPLOAD] librarian.php
-    [FTP] ftp://ftp.libgen.bz/upload/
-    [LAST] /index.php?req=fmode:last&topics1=all
-    [Files] /index.php?req=fmode:last&topics1=all
-    [Libgen] /index.php?req=fmode:last&topics%5B%5D=l
-    [Scientific Articles] /index.php?req=fmode:last&topics%5B%5D=a
-    [Fiction] /index.php?req=fmode:last&topics%5B%5D=f
-    [Comics] /index.php?req=fmode:last&topics%5B%5D=c
-    [Magazines] /index.php?req=fmode:last&topics%5B%5D=m
-    [Standards] /index.php?req=fmode:last&topics%5B%5D=s
-    [Fiction RUS] /index.php?req=fmode:last&topics%5B%5D=r
-    [Editions] /index.php?req=mode:last&curtab=e
-    [Series] /index.php?req=mode:last&curtab=s
-    [Publishers] /index.php?req=mode:last&curtab=p
-    [Authors] /index.php?req=mode:last&curtab=a
-    [Works] /index.php?req=mode:last&curtab=w
-    [API] json.php
-    [RSS] rss.php
-    [Top 100 users] top.php
-    [Stats] stat.php
-    [Topics] topics.php
-    [Batch search] batchsearchindex.php
-    [Bibliographic services] biblioservice.php
-    [Libgen librarian for desktop] https://wiki.mhut.org/software:libgen_desktop
-    [Source (PHP)] /code/
-    [LG soft] /soft/
-    [Full text search] https://z-library.se/fulltext/
-  tables: 0
-  js md5: []
-  ads.php refs: []
+===== direct mirror prefixes =====
+  GET https://libgen.li/get.php?md5=838e90ff2e4440c480e8832c47cabce5
+    500 ctype=text/html; charset=UTF-8 len=59 magic=b'<h1 st'
+  GET https://libgen.la/get.php?md5=838e90ff2e4440c480e8832c47cabce5
+    500 ctype=text/html; charset=UTF-8 len=426 magic=b'<h1 st'
+  GET https://libgen.bz/get.php?md5=838e90ff2e4440c480e8832c47cabce5
+    500 ctype=text/html; charset=UTF-8 len=59 magic=b'<h1 st'
+  GET https://libgen.vg/get.php?md5=838e90ff2e4440c480e8832c47cabce5
+    500 ctype=text/html; charset=UTF-8 len=59 magic=b'<h1 st'
+  GET https://library.lol/main/838e90ff2e4440c480e8832c47cabce5
+    err SSLError
+  GET https://libgen.rocks/get.php?md5=838e90ff2e4440c480e8832c47cabce5
+    err SSLError
+  GET https://download.library.lol/main/838e90ff2e4440c480e8832c47cabce5
+    err ConnectionError
 
-===== https://libgen.la/edition.php?id=1509289 =====
-  status=200 len=23559
-  md5 candidates: ['838e90ff2e4440c480e8832c47cabce5']
-  total <a> links: 75
-    [] /index.php
-    [NEWS (current)] /community/app.php/article/news
-    [FORUM (current)] /community/
-    [LOGIN] /community/ucp.php?mode=login
-    [Register] /community/ucp.php?mode=register
-    [Mirrors] /mirrors.php
-    [TOR] http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/
-    [Torrents] /torrents/
-    [Torrents status] https://ipdl.cat/data/torrents.html
-    [Usenet (*.nzb)] /nzb/
-    [Soft] /soft/
-    [Libgen] /dirlist.php?dir=dbdumps
-    [libgen.rs (gen.lib.rus.ec)] http://libgen.rs/dbdumps/
-    [UPLOAD] librarian.php
-    [FTP] ftp://ftp.libgen.bz/upload/
-    [LAST] /index.php?req=fmode:last&topics1=all
-    [Files] /index.php?req=fmode:last&topics1=all
-    [Libgen] /index.php?req=fmode:last&topics%5B%5D=l
-    [Scientific Articles] /index.php?req=fmode:last&topics%5B%5D=a
-    [Fiction] /index.php?req=fmode:last&topics%5B%5D=f
-    [Comics] /index.php?req=fmode:last&topics%5B%5D=c
-    [Magazines] /index.php?req=fmode:last&topics%5B%5D=m
-    [Standards] /index.php?req=fmode:last&topics%5B%5D=s
-    [Fiction RUS] /index.php?req=fmode:last&topics%5B%5D=r
-    [Editions] /index.php?req=mode:last&curtab=e
-    [Series] /index.php?req=mode:last&curtab=s
-    [Publishers] /index.php?req=mode:last&curtab=p
-    [Authors] /index.php?req=mode:last&curtab=a
-    [Works] /index.php?req=mode:last&curtab=w
-    [API] json.php
-    [RSS] rss.php
-    [Top 100 users] top.php
-    [Stats] stat.php
-    [Topics] topics.php
-    [Batch search] batchsearchindex.php
-    [Bibliographic services] biblioservice.php
-    [Libgen librarian for desktop] https://wiki.mhut.org/software:libgen_desktop
-    [Source (PHP)] /code/
-    [LG soft] /soft/
-    [Full text search] https://z-library.se/fulltext/
-  tables: 0
-  js md5: []
-  ads.php refs: []
+--- https://libgen.li/ads.php?md5=838e90ff2e4440c480e8832c47cabce5 ---
+  200 ctype=text/html; charset=UTF-8 len=8586
+  candidates: 0
 
-===== https://libgen.bz/edition.php?id=1509289 =====
-  status=200 len=22959
-  md5 candidates: []
-  total <a> links: 74
-    [] /index.php
-    [NEWS (current)] /community/app.php/article/news
-    [FORUM (current)] /community/
-    [LOGIN] /community/ucp.php?mode=login
-    [Register] /community/ucp.php?mode=register
-    [Mirrors] /mirrors.php
-    [TOR] http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/
-    [Torrents] /torrents/
-    [Torrents status] https://ipdl.cat/data/torrents.html
-    [Usenet (*.nzb)] /nzb/
-    [Soft] /soft/
-    [Libgen] /dirlist.php?dir=dbdumps
-    [libgen.rs (gen.lib.rus.ec)] http://libgen.rs/dbdumps/
-    [UPLOAD] librarian.php
-    [FTP] ftp://ftp.libgen.bz/upload/
-    [LAST] /index.php?req=fmode:last&topics1=all
-    [Files] /index.php?req=fmode:last&topics1=all
-    [Libgen] /index.php?req=fmode:last&topics%5B%5D=l
-    [Scientific Articles] /index.php?req=fmode:last&topics%5B%5D=a
-    [Fiction] /index.php?req=fmode:last&topics%5B%5D=f
-    [Comics] /index.php?req=fmode:last&topics%5B%5D=c
-    [Magazines] /index.php?req=fmode:last&topics%5B%5D=m
-    [Standards] /index.php?req=fmode:last&topics%5B%5D=s
-    [Fiction RUS] /index.php?req=fmode:last&topics%5B%5D=r
-    [Editions] /index.php?req=mode:last&curtab=e
-    [Series] /index.php?req=mode:last&curtab=s
-    [Publishers] /index.php?req=mode:last&curtab=p
-    [Authors] /index.php?req=mode:last&curtab=a
-    [Works] /index.php?req=mode:last&curtab=w
-    [API] json.php
-    [RSS] rss.php
-    [Top 100 users] top.php
-    [Stats] stat.php
-    [Topics] topics.php
-    [Batch search] batchsearchindex.php
-    [Bibliographic services] biblioservice.php
-    [Libgen librarian for desktop] https://wiki.mhut.org/software:libgen_desktop
-    [Source (PHP)] /code/
-    [LG soft] /soft/
-    [Full text search] https://z-library.se/fulltext/
-  tables: 0
-  js md5: []
-  ads.php refs: []
+--- https://libgen.la/ads.php?md5=838e90ff2e4440c480e8832c47cabce5 ---
+  200 ctype=text/html; charset=UTF-8 len=9186
+  candidates: 0
 
-written out/probe.json
+--- https://libgen.bz/ads.php?md5=838e90ff2e4440c480e8832c47cabce5 ---
+  200 ctype=text/html; charset=UTF-8 len=8586
+  candidates: 0
+
+--- https://libgen.vg/ads.php?md5=838e90ff2e4440c480e8832c47cabce5 ---
+  200 ctype=text/html; charset=UTF-8 len=8586
+  candidates: 0
