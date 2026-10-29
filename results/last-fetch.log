@@ -1,36 +1,38 @@
-================================================================
-Cloud Book Downloader v6
-  md5: 838e90ff2e4440c480e8832c47cabce5
-================================================================
 
-===== direct mirror prefixes =====
-  GET https://libgen.li/get.php?md5=838e90ff2e4440c480e8832c47cabce5
-    500 ctype=text/html; charset=UTF-8 len=59 magic=b'<h1 st'
-  GET https://libgen.la/get.php?md5=838e90ff2e4440c480e8832c47cabce5
-    500 ctype=text/html; charset=UTF-8 len=426 magic=b'<h1 st'
-  GET https://libgen.bz/get.php?md5=838e90ff2e4440c480e8832c47cabce5
-    500 ctype=text/html; charset=UTF-8 len=59 magic=b'<h1 st'
-  GET https://libgen.vg/get.php?md5=838e90ff2e4440c480e8832c47cabce5
-    500 ctype=text/html; charset=UTF-8 len=59 magic=b'<h1 st'
-  GET https://library.lol/main/838e90ff2e4440c480e8832c47cabce5
-    err SSLError
-  GET https://libgen.rocks/get.php?md5=838e90ff2e4440c480e8832c47cabce5
-    err SSLError
-  GET https://download.library.lol/main/838e90ff2e4440c480e8832c47cabce5
-    err ConnectionError
+===== https://libgen.li/ads.php?md5=838e90ff2e4440c480e8832c47cabce5 =====
+  200 len=8493
+  saved results/ads_libgen_li.html
+  all urls: 7, interesting: 4
+    https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css
+    https://cdn.jsdelivr.net/npm/popper.js@1.12.5/dist/popper.min.js
+    https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js
+    https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js
+  forms: []
+  js targets: ['/rss/index.php', '/img/favicon.ico', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css', '/css/font.min.css', '/css/dark-mode.css']
+  data attrs: ['#dmcamodal', '#aboutmodal', '#donatemodal']
 
---- https://libgen.li/ads.php?md5=838e90ff2e4440c480e8832c47cabce5 ---
-  200 ctype=text/html; charset=UTF-8 len=8586
-  candidates: 0
+===== https://libgen.la/ads.php?md5=838e90ff2e4440c480e8832c47cabce5 =====
+  200 len=8726
+  saved results/ads_libgen_la.html
+  all urls: 7, interesting: 4
+    https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css
+    https://cdn.jsdelivr.net/npm/popper.js@1.12.5/dist/popper.min.js
+    https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js
+    https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js
+  forms: []
+  js targets: ['/rss/index.php', '/img/favicon.ico', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css', '/css/font.min.css', '/css/dark-mode.css']
+  data attrs: ['#dmcamodal', '#aboutmodal', '#donatemodal', '086169667264616a48787a677c676665696164266b6765']
 
---- https://libgen.la/ads.php?md5=838e90ff2e4440c480e8832c47cabce5 ---
-  200 ctype=text/html; charset=UTF-8 len=9186
-  candidates: 0
+===== https://libgen.bz/ads.php?md5=838e90ff2e4440c480e8832c47cabce5 =====
+  200 len=8493
+  saved results/ads_libgen_bz.html
+  all urls: 7, interesting: 4
+    https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css
+    https://cdn.jsdelivr.net/npm/popper.js@1.12.5/dist/popper.min.js
+    https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js
+    https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js
+  forms: []
+  js targets: ['/rss/index.php', '/img/favicon.ico', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css', '/css/font.min.css', '/css/dark-mode.css']
+  data attrs: ['#dmcamodal', '#aboutmodal', '#donatemodal']
 
---- https://libgen.bz/ads.php?md5=838e90ff2e4440c480e8832c47cabce5 ---
-  200 ctype=text/html; charset=UTF-8 len=8586
-  candidates: 0
-
---- https://libgen.vg/ads.php?md5=838e90ff2e4440c480e8832c47cabce5 ---
-  200 ctype=text/html; charset=UTF-8 len=8586
-  candidates: 0
+written results/ads_probe_summary.json
