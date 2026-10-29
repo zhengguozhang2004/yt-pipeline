@@ -1,0 +1,143 @@
+{
+  "tried": [
+    {
+      "type": "ipfs",
+      "url": "https://ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc",
+      "status": 403,
+      "len": 5951
+    },
+    {
+      "type": "ipfs",
+      "url": "https://dweb.link/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc",
+      "status": 403,
+      "len": 5953
+    },
+    {
+      "type": "ipfs",
+      "url": "https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc",
+      "status": 404,
+      "len": 89
+    },
+    {
+      "type": "ipfs",
+      "url": "https://nftstorage.link/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc",
+      "status": 403,
+      "len": 5951
+    },
+    {
+      "type": "ipfs",
+      "url": "https://ipfs.fleek.co/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc",
+      "status": 522,
+      "len": 7225
+    },
+    {
+      "type": "ipfs",
+      "url": "https://w3s.link/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc",
+      "status": 403,
+      "len": 5953
+    },
+    {
+      "type": "ipfs",
+      "url": "https://4everland.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc",
+      "status": 451,
+      "len": 0
+    },
+    {
+      "type": "storage",
+      "url": "https://libgen.li/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle%20Dynamics%7BVittore%20Cossalter%7D%282006%2C%20Lulu.com%29%7B137286556%7D.epub",
+      "status": 404,
+      "len": 196
+    },
+    {
+      "type": "storage",
+      "url": "https://libgen.li/LG/01509000/dd531d3b702a951c8c899228e8ea8800",
+      "status": 404,
+      "len": 196
+    },
+    {
+      "type": "storage",
+      "url": "https://libgen.li/main/dd531d3b702a951c8c899228e8ea8800",
+      "status": 404,
+      "len": 196
+    },
+    {
+      "type": "storage",
+      "url": "https://libgen.li/get.php?md5=dd531d3b702a951c8c899228e8ea8800",
+      "status": 200,
+      "len": 20670
+    },
+    {
+      "type": "storage",
+      "url": "https://libgen.la/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle%20Dynamics%7BVittore%20Cossalter%7D%282006%2C%20Lulu.com%29%7B137286556%7D.epub",
+      "status": 404,
+      "len": 196
+    },
+    {
+      "type": "storage",
+      "url": "https://libgen.la/LG/01509000/dd531d3b702a951c8c899228e8ea8800",
+      "status": 404,
+      "len": 196
+    },
+    {
+      "type": "storage",
+      "url": "https://libgen.la/main/dd531d3b702a951c8c899228e8ea8800",
+      "status": 404,
+      "len": 196
+    },
+    {
+      "type": "storage",
+      "url": "https://libgen.la/get.php?md5=dd531d3b702a951c8c899228e8ea8800",
+      "status": 200,
+      "len": 20788
+    },
+    {
+      "type": "storage",
+      "url": "https://libgen.bz/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle%20Dynamics%7BVittore%20Cossalter%7D%282006%2C%20Lulu.com%29%7B137286556%7D.epub",
+      "status": 404,
+      "len": 196
+    },
+    {
+      "type": "storage",
+      "url": "https://libgen.bz/LG/01509000/dd531d3b702a951c8c899228e8ea8800",
+      "status": 404,
+      "len": 196
+    },
+    {
+      "type": "storage",
+      "url": "https://libgen.bz/main/dd531d3b702a951c8c899228e8ea8800",
+      "status": 404,
+      "len": 196
+    },
+    {
+      "type": "storage",
+      "url": "https://libgen.bz/get.php?md5=dd531d3b702a951c8c899228e8ea8800",
+      "status": 200,
+      "len": 20555
+    },
+    {
+      "type": "storage",
+      "url": "https://libgen.vg/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle%20Dynamics%7BVittore%20Cossalter%7D%282006%2C%20Lulu.com%29%7B137286556%7D.epub",
+      "status": 404,
+      "len": 196
+    },
+    {
+      "type": "storage",
+      "url": "https://libgen.vg/LG/01509000/dd531d3b702a951c8c899228e8ea8800",
+      "status": 404,
+      "len": 196
+    },
+    {
+      "type": "storage",
+      "url": "https://libgen.vg/main/dd531d3b702a951c8c899228e8ea8800",
+      "status": 404,
+      "len": 196
+    },
+    {
+      "type": "storage",
+      "url": "https://libgen.vg/get.php?md5=dd531d3b702a951c8c899228e8ea8800",
+      "status": 200,
+      "len": 20555
+    }
+  ],
+  "files": []
+}
