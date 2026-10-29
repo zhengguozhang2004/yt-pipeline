@@ -44,10 +44,12 @@ jobs:
           QUERY: ${{ github.event.inputs.query }}
           BOOK_ID: ${{ github.event.inputs.book_id }}
           BOOK_MD5: ${{ github.event.inputs.book_md5 }}
+          REAL_MD5: dd531d3b702a951c8c899228e8ea8800
+          FILE_ID: '92540206'
           ISBN: ${{ github.event.inputs.isbn }}
         run: |
           mkdir -p out
-          python scripts/probe_v10.py 2>&1 | tee out/fetch.log
+          python scripts/fetch_v11.py 2>&1 | tee out/fetch.log
           echo "---- done ----"
 
       - name: Inspect results
