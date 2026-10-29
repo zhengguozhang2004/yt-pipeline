@@ -48,7 +48,7 @@ jobs:
           ISBN: ${{ github.event.inputs.isbn }}
         run: |
           mkdir -p out
-          python scripts/fetch_book.py 2>&1 | tee out/fetch.log
+          python scripts/fetch_book2.py 2>&1 | tee out/fetch.log
           echo "---- exit: $? ----"
 
       - name: List results
@@ -74,7 +74,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           mkdir -p results
           cp out/fetch.log "results/last-fetch.log" 2>/dev/null || true
-          cp out/report.json "results/last-report.json" 2>/dev/null || true
+          cp out/report2.json "results/last-report.json" 2>/dev/null || true
           git add results/ 2>/dev/null || true
           git commit -m "fetch-book report $(date -u +%Y%m%dT%H%M%SZ)" 2>/dev/null || echo "nothing to commit"
           git push 2>/dev/null || echo "push skipped"
