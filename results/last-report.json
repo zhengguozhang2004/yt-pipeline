@@ -1,0 +1,115 @@
+{
+  "query": "Motorcycle Dynamics Cossalter",
+  "isbn": "9781430308614",
+  "mode": "search",
+  "attempts": [
+    {
+      "channel": "google-books",
+      "ok": false,
+      "detail": "no items"
+    },
+    {
+      "channel": "openlibrary",
+      "ok": true,
+      "detail": "3 docs",
+      "extra": {
+        "items": [
+          {
+            "author_key": [
+              "OL3248822A"
+            ],
+            "author_name": [
+              "Vittore Cossalter"
+            ],
+            "cover_i": 7261513,
+            "ebook_access": "no_ebook",
+            "edition_count": 1,
+            "first_publish_year": 2006,
+            "has_fulltext": false,
+            "key": "/works/OL8815453W",
+            "language": [
+              "eng"
+            ],
+            "public_scan_b": false,
+            "title": "Motorcycle Dynamics"
+          },
+          {
+            "author_key": [
+              "OL3248822A"
+            ],
+            "author_name": [
+              "Vittore Cossalter"
+            ],
+            "ebook_access": "no_ebook",
+            "edition_count": 1,
+            "first_publish_year": 2002,
+            "has_fulltext": false,
+            "key": "/works/OL9178607W",
+            "language": [
+              "eng"
+            ],
+            "public_scan_b": false,
+            "title": "Motorcycle Dynamics"
+          },
+          {
+            "author_key": [
+              "OL3248822A"
+            ],
+            "author_name": [
+              "Vittore Cossalter"
+            ],
+            "cover_edition_key": "OL39928083M",
+            "cover_i": 13498686,
+            "ebook_access": "no_ebook",
+            "edition_count": 1,
+            "first_publish_year": 2014,
+            "has_fulltext": false,
+            "key": "/works/OL29033814W",
+            "language": [
+              "ita"
+            ],
+            "public_scan_b": false,
+            "title": "Motorcycle Dynamics-Versione Italiana-"
+          }
+        ]
+      }
+    },
+    {
+      "channel": "libgen.li",
+      "ok": false,
+      "detail": "no parsed rows"
+    },
+    {
+      "channel": "libgen.is",
+      "ok": false,
+      "detail": "ConnectTimeout: HTTPSConnectionPool(host='libgen.is', port=443): Max retries exceeded with url: /search.php?req=Motorcycle+Dynamics+Cossalter (Caused by ConnectTimeoutError(<HTTPSConnection(host='libgen.is', port=443) at 0x7f918fdf4b10>, 'Connection to libgen.is timed out. (connect timeout=30)'))"
+    },
+    {
+      "channel": "libgen.rs",
+      "ok": false,
+      "detail": "ConnectTimeout: HTTPSConnectionPool(host='libgen.rs', port=443): Max retries exceeded with url: /search.php?req=Motorcycle+Dynamics+Cossalter (Caused by ConnectTimeoutError(<HTTPSConnection(host='libgen.rs', port=443) at 0x7f918fbf42d0>, 'Connection to libgen.rs timed out. (connect timeout=30)'))"
+    },
+    {
+      "channel": "annas:annas-archive.org",
+      "ok": false,
+      "detail": "ConnectionError: HTTPSConnectionPool(host='annas-archive.org', port=443): Max retries exceeded with url: /search?q=Motorcycle+Dynamics+Cossalter (Caused by NameResolutionError(\"HTTPSConnection(host='annas-archive.org', port=443): Failed to resolve 'annas-archive.org' ([Errno -2] Name or service not known)\"))"
+    },
+    {
+      "channel": "annas:annas-archive.se",
+      "ok": false,
+      "detail": "ConnectionError: HTTPSConnectionPool(host='annas-archive.se', port=443): Max retries exceeded with url: /search?q=Motorcycle+Dynamics+Cossalter (Caused by NameResolutionError(\"HTTPSConnection(host='annas-archive.se', port=443): Failed to resolve 'annas-archive.se' ([Errno -2] Name or service not known)\"))"
+    },
+    {
+      "channel": "annas-archive",
+      "ok": false,
+      "detail": "all hosts failed"
+    },
+    {
+      "channel": "archive.org",
+      "ok": false,
+      "detail": "no docs"
+    }
+  ],
+  "found": [],
+  "files": []
+}

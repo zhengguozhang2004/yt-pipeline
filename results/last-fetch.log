@@ -1,0 +1,49 @@
+============================================================
+Cloud Book Fetcher (GitHub Actions)
+  query : Motorcycle Dynamics Cossalter
+  isbn  : 9781430308614
+  mode  : search
+============================================================
+
+===== C6 Google Books =====
+  status=429
+[FAIL] google-books: no items
+
+===== C5 openlibrary =====
+  status=200
+  docs: 3
+    - Motorcycle Dynamics | key=/works/OL8815453W
+    - Motorcycle Dynamics | key=/works/OL9178607W
+    - Motorcycle Dynamics-Versione Italiana- | key=/works/OL29033814W
+[OK ] openlibrary: 3 docs
+
+===== C1 libgen.li =====
+  status=200 len=81369
+  table rows: 0
+  parsed items: 0
+[FAIL] libgen.li: no parsed rows
+
+===== C2 libgen.is =====
+[FAIL] libgen.is: ConnectTimeout: HTTPSConnectionPool(host='libgen.is', port=443): Max retries exceeded with url: /search.php?req=Motorcycle+Dynamics+Cossalter (Caused by ConnectTimeoutError(<HTTPSConnection(host='libgen.is', port=443) at 0x7f918fdf4b10>, 'Connection to libgen.is timed out. (connect timeout=30)'))
+
+===== C2 libgen.rs =====
+[FAIL] libgen.rs: ConnectTimeout: HTTPSConnectionPool(host='libgen.rs', port=443): Max retries exceeded with url: /search.php?req=Motorcycle+Dynamics+Cossalter (Caused by ConnectTimeoutError(<HTTPSConnection(host='libgen.rs', port=443) at 0x7f918fbf42d0>, 'Connection to libgen.rs timed out. (connect timeout=30)'))
+
+===== C3 Anna's Archive =====
+[FAIL] annas:annas-archive.org: ConnectionError: HTTPSConnectionPool(host='annas-archive.org', port=443): Max retries exceeded with url: /search?q=Motorcycle+Dynamics+Cossalter (Caused by NameResolutionError("HTTPSConnection(host='annas-archive.org', port=443): Failed to resolve 'annas-archive.org' ([Errno -2] Name or service not known)"))
+[FAIL] annas:annas-archive.se: ConnectionError: HTTPSConnectionPool(host='annas-archive.se', port=443): Max retries exceeded with url: /search?q=Motorcycle+Dynamics+Cossalter (Caused by NameResolutionError("HTTPSConnection(host='annas-archive.se', port=443): Failed to resolve 'annas-archive.se' ([Errno -2] Name or service not known)"))
+  annas-archive.li status=200 len=27765
+  annas-archive.li links: 0
+[FAIL] annas-archive: all hosts failed
+
+===== C4 archive.org =====
+  status=200
+  docs: 0
+[FAIL] archive.org: no docs
+
+============================================================
+SUMMARY
+============================================================
+successful channels: ['openlibrary']
+total results found: 0
+written: out/report.json
