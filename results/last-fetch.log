@@ -1,49 +1,84 @@
-============================================================
-Cloud Book Fetcher (GitHub Actions)
-  query : Motorcycle Dynamics Cossalter
-  isbn  : 9781430308614
-  mode  : search
-============================================================
+==============================================================
+Cloud Book Fetcher v2
+  query: Motorcycle Dynamics Cossalter
+  isbn : 9781430308614
+==============================================================
 
-===== C6 Google Books =====
-  status=429
-[FAIL] google-books: no items
+===== Google Books (exact) =====
+  q='isbn:9781430308614' -> 429
+  q='intitle:"Motorcycle Dynamics" inauthor:Cossalter' -> 429
+  q='Motorcycle Dynamics Cossalter' -> 429
+[FAIL] google-books: no relevant items
 
-===== C5 openlibrary =====
-  status=200
-  docs: 3
-    - Motorcycle Dynamics | key=/works/OL8815453W
-    - Motorcycle Dynamics | key=/works/OL9178607W
-    - Motorcycle Dynamics-Versione Italiana- | key=/works/OL29033814W
-[OK ] openlibrary: 3 docs
+===== DuckDuckGo HTML =====
+  q='"Motorcycle Dynamics Cossalter" pdf' -> 202 len=14422
+  q='"Motorcycle Dynamics" Cossalter filetype:pdf' -> 202 len=14429
+  q='Cossalter "Motorcycle Dynamics" download' -> 202 len=14421
+[FAIL] duckduckgo: no results
 
-===== C1 libgen.li =====
-  status=200 len=81369
-  table rows: 0
-  parsed items: 0
-[FAIL] libgen.li: no parsed rows
+===== libgen mirror family =====
+  libgen.li        -> 200
+  libgen.la        -> 200
+  libgen.gs        -> ConnectionError
+  libgen.vg        -> 200
+  libgen.bz        -> 200
+  libgen.onl       -> 200
+  libgen.lc        -> ConnectTimeout
+  libgen.fun       -> SSLError
+  libgen.is        -> ConnectTimeout
+  libgen.rs        -> ConnectTimeout
+  libgen.st        -> ConnectTimeout
+  libgen.ee        -> 200
+  libgen.click     -> ConnectionError
 
-===== C2 libgen.is =====
-[FAIL] libgen.is: ConnectTimeout: HTTPSConnectionPool(host='libgen.is', port=443): Max retries exceeded with url: /search.php?req=Motorcycle+Dynamics+Cossalter (Caused by ConnectTimeoutError(<HTTPSConnection(host='libgen.is', port=443) at 0x7f918fdf4b10>, 'Connection to libgen.is timed out. (connect timeout=30)'))
+  --- searching on libgen.li ---
+    libgen.li {'req': 'Motorcycle Dynamics Cossalter'} -> 200 len=81369
+    * table#tablelibgen tr: 20 matching rows
+      - ['Motorcycle Dynamics Second Edition 1430308613; 9781430308614 b l 1509289', 'Vittore Cossalter', 'Lulu.com', '2006']
+      - ['Vehicle System Dynamics 2000-sep 01 vol. 34 iss. 3 pp.175—198 Optimum Suspension Design for Motorcycle Braking DOI: 10.1076/vesd.34.3.175.2034 a a 15472901', 'Doria, Alberto; Lot, Roberto; Cossalter, Vittore', '', '2000 September 01']
+      - ['Vehicle System Dynamics 2002-jun 01 vol. 37 iss. 6 pp.423—447 A Motorcycle Multi-Body Model for Real Time Simulations Based on the Natural Coordinates Approach DOI: 10.1076/vesd.37.6.423.3523 a a 22619281', 'Cossalter, Vittore; Lot, Roberto', '', '2002 June 01']
+      - ['Vehicle System Dynamics 2003-jan 01 vol. 39 iss. 1 pp.1—25 Experimental Study of Motorcycle Transfer Functions for Evaluating Handling DOI: 10.1076/vesd.39.1.1.8243 a a 29180706', 'Biral, F.; Bortoluzzi, D.; Cossalter, V.; Lio, M.', '', '2003 January 01']
+      - ['Vehicle System Dynamics 2006-apr vol. 44 iss. 4 pp.339—355 Frequency-domain method for evaluating the ride comfort of a motorcycle DOI: 10.1080/00423110500420712 a a 29231088', 'Cossalter, Vittore; Doria, Alberto; Garbin, Stefano; Lot, Roberto', '', '2006 April']
+[OK ] libgen:libgen.li: 20 rows
 
-===== C2 libgen.rs =====
-[FAIL] libgen.rs: ConnectTimeout: HTTPSConnectionPool(host='libgen.rs', port=443): Max retries exceeded with url: /search.php?req=Motorcycle+Dynamics+Cossalter (Caused by ConnectTimeoutError(<HTTPSConnection(host='libgen.rs', port=443) at 0x7f918fbf42d0>, 'Connection to libgen.rs timed out. (connect timeout=30)'))
+===== Anna's Archive (new domains) =====
+  annas-archive.li       -> 200
+    search -> 200 len=27853
+    items: 0
+  annas-archive.se       -> ConnectionError
+  annas-archive.org      -> ConnectionError
+  annasarchive.org       -> SSLError
+  annas-archive.gs       -> 200
+    search -> 200 len=92511
+    items: 0
+  annas-archive.pm       -> SSLError
+[FAIL] annas: no results
 
-===== C3 Anna's Archive =====
-[FAIL] annas:annas-archive.org: ConnectionError: HTTPSConnectionPool(host='annas-archive.org', port=443): Max retries exceeded with url: /search?q=Motorcycle+Dynamics+Cossalter (Caused by NameResolutionError("HTTPSConnection(host='annas-archive.org', port=443): Failed to resolve 'annas-archive.org' ([Errno -2] Name or service not known)"))
-[FAIL] annas:annas-archive.se: ConnectionError: HTTPSConnectionPool(host='annas-archive.se', port=443): Max retries exceeded with url: /search?q=Motorcycle+Dynamics+Cossalter (Caused by NameResolutionError("HTTPSConnection(host='annas-archive.se', port=443): Failed to resolve 'annas-archive.se' ([Errno -2] Name or service not known)"))
-  annas-archive.li status=200 len=27765
-  annas-archive.li links: 0
-[FAIL] annas-archive: all hosts failed
-
-===== C4 archive.org =====
-  status=200
+===== archive.org (expanded) =====
+  q='title:("Motorcycle Dynamics")' -> 200
   docs: 0
-[FAIL] archive.org: no docs
+  q='creator:("Cossalter")' -> 200
+  docs: 1
+    - Personal computers for physically disabled | camvchm_000026 | audio
+[OK ] archive.org: 1 docs
 
-============================================================
+===== Author / university site =====
+  https://www.dinamoto.it/ -> ConnectionError
+  https://www.dinamoto.it/DINAMOTO/moto/index.html -> ConnectionError
+  http://www.dinamoto.it/ -> ConnectionError
+  https://www.gest.unipd.it/ -> SSLError
+  https://www.unipd.it/en/ -> 200 len=2000316
+    contains motorcycle/cossalter: False
+    pdf links: 0
+[OK ] author-site: 1 reachable
+
+==============================================================
 SUMMARY
-============================================================
-successful channels: ['openlibrary']
-total results found: 0
-written: out/report.json
+==============================================================
+Traceback (most recent call last):
+  File "/home/runner/work/yt-pipeline/yt-pipeline/scripts/fetch_book2.py", line 344, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/runner/work/yt-pipeline/yt-pipeline/scripts/fetch_book2.py", line 334, in main
+    log("successful:", oks)
+TypeError: log() takes 1 positional argument but 2 were given
