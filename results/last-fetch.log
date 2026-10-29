@@ -1,47 +1,41 @@
 ================================================================
-v8: libgen JSON API probe
-  isbn : 9781430308614
-  query: Motorcycle Dynamics Cossalter
+v9: broad library probe
 ================================================================
 
---- https://libgen.li/json.php?req=edition
-    200 ctype=application/json len=27
-    dict keys: ['error']
-    {"error": "No Request keys"}
+===== libgen.li json.php variants =====
+  GET https://libgen.li/json.php?object=e&req=edition&key=9781430308614 -> 200 len=27
+  GET https://libgen.li/json.php?edition&key=9781430308614 -> 200 len=27
+  https://libgen.li/json.php params={'object': 'e', 'req': 'edition', 'key': '9781430308614'} -> 200 application/json len=27
+  https://libgen.li/json.php params={'req': 'edition', 'key': '9781430308614'} -> 200 application/json len=27
+  https://libgen.li/json.php params={'object': 'b', 'req': 'libinfo', 'key': '9781430308614'} -> 200 application/json len=27
+  https://libgen.li/json.php params={'object': 'l', 'req': 'Motorcycle Dynamics Cossalter'} -> 200 application/json len=27
 
---- https://libgen.li/json.php?req=libinfo
-    200 ctype=application/json len=27
-    dict keys: ['error']
-    {"error": "No Request keys"}
+===== libgen.la json.php variants =====
+  GET https://libgen.la/json.php?object=e&req=edition&key=9781430308614 -> 200 len=27
+  GET https://libgen.la/json.php?edition&key=9781430308614 -> 200 len=27
+  https://libgen.la/json.php params={'object': 'e', 'req': 'edition', 'key': '9781430308614'} -> 200 application/json len=27
+  https://libgen.la/json.php params={'req': 'edition', 'key': '9781430308614'} -> 200 application/json len=27
+  https://libgen.la/json.php params={'object': 'b', 'req': 'libinfo', 'key': '9781430308614'} -> 200 application/json len=27
+  https://libgen.la/json.php params={'object': 'l', 'req': 'Motorcycle Dynamics Cossalter'} -> 200 application/json len=27
 
---- https://libgen.la/json.php?req=edition
-    200 ctype=application/json len=27
-    dict keys: ['error']
-    {"error": "No Request keys"}
+===== libgen.bz json.php variants =====
+  GET https://libgen.bz/json.php?object=e&req=edition&key=9781430308614 -> 200 len=27
+  GET https://libgen.bz/json.php?edition&key=9781430308614 -> 200 len=27
+  https://libgen.bz/json.php params={'object': 'e', 'req': 'edition', 'key': '9781430308614'} -> 200 application/json len=27
+  https://libgen.bz/json.php params={'req': 'edition', 'key': '9781430308614'} -> 200 application/json len=27
+  https://libgen.bz/json.php params={'object': 'b', 'req': 'libinfo', 'key': '9781430308614'} -> 200 application/json len=27
+  https://libgen.bz/json.php params={'object': 'l', 'req': 'Motorcycle Dynamics Cossalter'} -> 200 application/json len=27
 
---- https://libgen.la/json.php?req=libinfo
-    200 ctype=application/json len=27
-    dict keys: ['error']
-    {"error": "No Request keys"}
+===== other libraries =====
+  probe z-library.se
+    -> ConnectTimeout
+  probe zh.z-lib.gs
+    -> ConnectionError
+  probe z-lib.io
+    -> ConnectionError
+  probe 1lib.sk
+    -> ConnectionError
+  probe library.lol
+    -> SSLError
 
---- https://libgen.bz/json.php?req=edition
-    200 ctype=application/json len=27
-    dict keys: ['error']
-    {"error": "No Request keys"}
-
---- https://libgen.bz/json.php?req=libinfo
-    200 ctype=application/json len=27
-    dict keys: ['error']
-    {"error": "No Request keys"}
-
---- https://libgen.vg/json.php?req=edition
-    200 ctype=application/json len=27
-    dict keys: ['error']
-    {"error": "No Request keys"}
-
---- https://libgen.vg/json.php?req=libinfo
-    200 ctype=application/json len=27
-    dict keys: ['error']
-    {"error": "No Request keys"}
-
-written results/json_probe.json
+written results/v9_report.json

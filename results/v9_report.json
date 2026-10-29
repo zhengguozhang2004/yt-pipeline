@@ -1,0 +1,131 @@
+{
+  "libgen_json": {
+    "libgen.li": [
+      {
+        "params": {
+          "object": "e",
+          "req": "edition",
+          "key": "9781430308614"
+        },
+        "data": {
+          "error": "No Request keys"
+        }
+      },
+      {
+        "params": {
+          "req": "edition",
+          "key": "9781430308614"
+        },
+        "data": {
+          "error": "No Request keys"
+        }
+      },
+      {
+        "params": {
+          "object": "b",
+          "req": "libinfo",
+          "key": "9781430308614"
+        },
+        "data": {
+          "error": "No Request keys"
+        }
+      },
+      {
+        "params": {
+          "object": "l",
+          "req": "Motorcycle Dynamics Cossalter"
+        },
+        "data": {
+          "error": "No Request keys"
+        }
+      }
+    ],
+    "libgen.la": [
+      {
+        "params": {
+          "object": "e",
+          "req": "edition",
+          "key": "9781430308614"
+        },
+        "data": {
+          "error": "No Request keys"
+        }
+      },
+      {
+        "params": {
+          "req": "edition",
+          "key": "9781430308614"
+        },
+        "data": {
+          "error": "No Request keys"
+        }
+      },
+      {
+        "params": {
+          "object": "b",
+          "req": "libinfo",
+          "key": "9781430308614"
+        },
+        "data": {
+          "error": "No Request keys"
+        }
+      },
+      {
+        "params": {
+          "object": "l",
+          "req": "Motorcycle Dynamics Cossalter"
+        },
+        "data": {
+          "error": "No Request keys"
+        }
+      }
+    ],
+    "libgen.bz": [
+      {
+        "params": {
+          "object": "e",
+          "req": "edition",
+          "key": "9781430308614"
+        },
+        "data": {
+          "error": "No Request keys"
+        }
+      },
+      {
+        "params": {
+          "req": "edition",
+          "key": "9781430308614"
+        },
+        "data": {
+          "error": "No Request keys"
+        }
+      },
+      {
+        "params": {
+          "object": "b",
+          "req": "libinfo",
+          "key": "9781430308614"
+        },
+        "data": {
+          "error": "No Request keys"
+        }
+      },
+      {
+        "params": {
+          "object": "l",
+          "req": "Motorcycle Dynamics Cossalter"
+        },
+        "data": {
+          "error": "No Request keys"
+        }
+      }
+    ]
+  },
+  "other_libs": {
+    "z-library.se": "ConnectTimeout",
+    "zh.z-lib.gs": "ConnectionError",
+    "z-lib.io": "ConnectionError",
+    "1lib.sk": "ConnectionError",
+    "library.lol": "SSLError"
+  }
+}
