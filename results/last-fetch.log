@@ -1,41 +1,295 @@
 ================================================================
-v9: broad library probe
+v10: row-link extraction and follow
 ================================================================
 
-===== libgen.li json.php variants =====
-  GET https://libgen.li/json.php?object=e&req=edition&key=9781430308614 -> 200 len=27
-  GET https://libgen.li/json.php?edition&key=9781430308614 -> 200 len=27
-  https://libgen.li/json.php params={'object': 'e', 'req': 'edition', 'key': '9781430308614'} -> 200 application/json len=27
-  https://libgen.li/json.php params={'req': 'edition', 'key': '9781430308614'} -> 200 application/json len=27
-  https://libgen.li/json.php params={'object': 'b', 'req': 'libinfo', 'key': '9781430308614'} -> 200 application/json len=27
-  https://libgen.li/json.php params={'object': 'l', 'req': 'Motorcycle Dynamics Cossalter'} -> 200 application/json len=27
+##### HOST libgen.li #####
 
-===== libgen.la json.php variants =====
-  GET https://libgen.la/json.php?object=e&req=edition&key=9781430308614 -> 200 len=27
-  GET https://libgen.la/json.php?edition&key=9781430308614 -> 200 len=27
-  https://libgen.la/json.php params={'object': 'e', 'req': 'edition', 'key': '9781430308614'} -> 200 application/json len=27
-  https://libgen.la/json.php params={'req': 'edition', 'key': '9781430308614'} -> 200 application/json len=27
-  https://libgen.la/json.php params={'object': 'b', 'req': 'libinfo', 'key': '9781430308614'} -> 200 application/json len=27
-  https://libgen.la/json.php params={'object': 'l', 'req': 'Motorcycle Dynamics Cossalter'} -> 200 application/json len=27
+[ROW] Motorcycle Dynamics Second Edition 1430308613; 9781430308614 b l 1509289
+  links in row (8):
+    [Motorcycle Dynamics Second Edition] edition.php?id=137286556
+    [1430308613; 9781430308614] edition.php?id=137286556
+    [33 MB] /file.php?id=92540206
+    [1] /ads.php?md5=dd531d3b702a951c8c899228e8ea8800
+    [2] https://libgen.xyz/book/dd531d3b702a951c8c899228e8ea8800?utm_source=libgen.li
+    [3] https://en.annas-archive.gl/md5/dd531d3b702a951c8c899228e8ea8800?r=Ax2w6jC
+    [4] https://libgen.pw/book/dd531d3b702a951c8c899228e8ea8800?utm_source=libgen.li
+    [5] https://randombook.org/book/dd531d3b702a951c8c899228e8ea8800?utm_source=libgen.li
 
-===== libgen.bz json.php variants =====
-  GET https://libgen.bz/json.php?object=e&req=edition&key=9781430308614 -> 200 len=27
-  GET https://libgen.bz/json.php?edition&key=9781430308614 -> 200 len=27
-  https://libgen.bz/json.php params={'object': 'e', 'req': 'edition', 'key': '9781430308614'} -> 200 application/json len=27
-  https://libgen.bz/json.php params={'req': 'edition', 'key': '9781430308614'} -> 200 application/json len=27
-  https://libgen.bz/json.php params={'object': 'b', 'req': 'libinfo', 'key': '9781430308614'} -> 200 application/json len=27
-  https://libgen.bz/json.php params={'object': 'l', 'req': 'Motorcycle Dynamics Cossalter'} -> 200 application/json len=27
+  FOLLOW https://libgen.li/edition.php?id=137286556
+    -> 200 text/html; charset=UTF-8 len=28373 magic=b'\xef\xbb\xbf<!D'
+    sub links: 8 ['https://cloudflare-ipfs.com/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'https://gateway.ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'http://localhost:8080/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'magnet:?xt=urn:sha1:IIOKMRK5H7RKTGLN44ULWJ2CRD5R23DZ&xl=34702984&dn=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub']
+      GET https://cloudflare-ipfs.com/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?file
+        err ConnectionError
+      GET https://gateway.ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename
+        -> 403 len=6397 magic=b'<!DOCT'
+      GET https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?fil
+        -> 404 len=89 magic=b'The re'
+      GET http://localhost:8080/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=M
+        err ConnectionError
+      GET http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/LG/01509000/dd531d3b702a951c8c
+        err ConnectionError
+      GET https://libgen.li/magnet:?xt=urn:sha1:IIOKMRK5H7RKTGLN44ULWJ2CRD5R23DZ&xl=34702984&dn=Motorcycle Dyn
+        -> 403 len=199 magic=b'<!DOCT'
+      GET https://libgen.li/ed2k://|file|Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epu
+        -> 403 len=199 magic=b'<!DOCT'
+      GET https://libgen.li/magnet:?xt=urn:tree:tiger:2ZDLOLYD3MICOIYEIH5NYKKNUI4ICTZEML7AM4A&xl=34702984&dn=M
+        -> 403 len=199 magic=b'<!DOCT'
 
-===== other libraries =====
-  probe z-library.se
-    -> ConnectTimeout
-  probe zh.z-lib.gs
-    -> ConnectionError
-  probe z-lib.io
-    -> ConnectionError
-  probe 1lib.sk
-    -> ConnectionError
-  probe library.lol
-    -> SSLError
+  FOLLOW https://libgen.li/edition.php?id=137286556
+    -> 200 text/html; charset=UTF-8 len=28373 magic=b'\xef\xbb\xbf<!D'
+    sub links: 8 ['https://cloudflare-ipfs.com/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'https://gateway.ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'http://localhost:8080/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'magnet:?xt=urn:sha1:IIOKMRK5H7RKTGLN44ULWJ2CRD5R23DZ&xl=34702984&dn=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub']
+      GET https://cloudflare-ipfs.com/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?file
+        err ConnectionError
+      GET https://gateway.ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename
+        -> 403 len=6376 magic=b'<!DOCT'
+      GET https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?fil
+        -> 404 len=89 magic=b'The re'
+      GET http://localhost:8080/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=M
+        err ConnectionError
+      GET http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/LG/01509000/dd531d3b702a951c8c
+        err ConnectionError
+      GET https://libgen.li/magnet:?xt=urn:sha1:IIOKMRK5H7RKTGLN44ULWJ2CRD5R23DZ&xl=34702984&dn=Motorcycle Dyn
+        -> 403 len=199 magic=b'<!DOCT'
+      GET https://libgen.li/ed2k://|file|Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epu
+        -> 403 len=199 magic=b'<!DOCT'
+      GET https://libgen.li/magnet:?xt=urn:tree:tiger:2ZDLOLYD3MICOIYEIH5NYKKNUI4ICTZEML7AM4A&xl=34702984&dn=M
+        -> 403 len=199 magic=b'<!DOCT'
 
-written results/v9_report.json
+  FOLLOW https://libgen.li/file.php?id=92540206
+    -> 200 text/html; charset=UTF-8 len=25510 magic=b'\xef\xbb\xbf<!D'
+    sub links: 8 ['https://cloudflare-ipfs.com/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'https://gateway.ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'http://localhost:8080/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'magnet:?xt=urn:sha1:IIOKMRK5H7RKTGLN44ULWJ2CRD5R23DZ&xl=34702984&dn=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub']
+      GET https://cloudflare-ipfs.com/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?file
+        err ConnectionError
+      GET https://gateway.ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename
+        -> 403 len=6376 magic=b'<!DOCT'
+      GET https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?fil
+        -> 404 len=89 magic=b'The re'
+      GET http://localhost:8080/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=M
+        err ConnectionError
+      GET http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/LG/01509000/dd531d3b702a951c8c
+        err ConnectionError
+      GET https://libgen.li/magnet:?xt=urn:sha1:IIOKMRK5H7RKTGLN44ULWJ2CRD5R23DZ&xl=34702984&dn=Motorcycle Dyn
+        -> 403 len=199 magic=b'<!DOCT'
+      GET https://libgen.li/ed2k://|file|Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epu
+        -> 403 len=199 magic=b'<!DOCT'
+      GET https://libgen.li/magnet:?xt=urn:tree:tiger:2ZDLOLYD3MICOIYEIH5NYKKNUI4ICTZEML7AM4A&xl=34702984&dn=M
+        -> 403 len=199 magic=b'<!DOCT'
+
+  FOLLOW https://libgen.li/ads.php?md5=dd531d3b702a951c8c899228e8ea8800
+    -> 200 text/html; charset=UTF-8 len=20670 magic=b'<!DOCT'
+    sub links: 1 ['get.php?md5=dd531d3b702a951c8c899228e8ea8800&key=LZ9HBLGP8ZNW3KRA']
+      GET https://libgen.li/get.php?md5=dd531d3b702a951c8c899228e8ea8800&key=LZ9HBLGP8ZNW3KRA
+        -> 200 len=34702984 magic=b'PK\x03\x04\n\x00'
+
+  FOLLOW https://libgen.xyz/book/dd531d3b702a951c8c899228e8ea8800?utm_source=libgen.li
+    -> 200 text/html;charset=utf-8 len=1517 magic=b'<!DOCT'
+    sub links: 0 []
+
+  FOLLOW https://en.annas-archive.gl/md5/dd531d3b702a951c8c899228e8ea8800?r=Ax2w6jC
+    -> 500 text/html; charset=utf-8 len=437 magic=b'<!doct'
+
+  FOLLOW https://libgen.pw/book/dd531d3b702a951c8c899228e8ea8800?utm_source=libgen.li
+    -> 200 text/html;charset=utf-8 len=1517 magic=b'<!DOCT'
+    sub links: 0 []
+
+  FOLLOW https://randombook.org/book/dd531d3b702a951c8c899228e8ea8800?utm_source=libgen.li
+    -> 200 text/html;charset=utf-8 len=1517 magic=b'<!DOCT'
+    sub links: 0 []
+
+##### HOST libgen.la #####
+
+[ROW] Motorcycle Dynamics Second Edition 1430308613; 9781430308614 b l 1509289
+  links in row (8):
+    [Motorcycle Dynamics Second Edition] edition.php?id=137286556
+    [1430308613; 9781430308614] edition.php?id=137286556
+    [33 MB] /file.php?id=92540206
+    [1] /ads.php?md5=dd531d3b702a951c8c899228e8ea8800
+    [2] https://libgen.xyz/book/dd531d3b702a951c8c899228e8ea8800?utm_source=libgen.li
+    [3] https://en.annas-archive.gl/md5/dd531d3b702a951c8c899228e8ea8800?r=Ax2w6jC
+    [4] https://libgen.pw/book/dd531d3b702a951c8c899228e8ea8800?utm_source=libgen.li
+    [5] https://randombook.org/book/dd531d3b702a951c8c899228e8ea8800?utm_source=libgen.li
+
+  FOLLOW https://libgen.la/edition.php?id=137286556
+    -> 200 text/html; charset=UTF-8 len=28973 magic=b'\xef\xbb\xbf<!D'
+    sub links: 9 ['https://cloudflare-ipfs.com/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'https://gateway.ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'http://localhost:8080/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'magnet:?xt=urn:sha1:IIOKMRK5H7RKTGLN44ULWJ2CRD5R23DZ&xl=34702984&dn=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub']
+      GET https://cloudflare-ipfs.com/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?file
+        err ConnectionError
+      GET https://gateway.ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename
+        -> 403 len=6376 magic=b'<!DOCT'
+      GET https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?fil
+        -> 404 len=89 magic=b'The re'
+      GET http://localhost:8080/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=M
+        err ConnectionError
+      GET http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/LG/01509000/dd531d3b702a951c8c
+        err ConnectionError
+      GET https://libgen.la/magnet:?xt=urn:sha1:IIOKMRK5H7RKTGLN44ULWJ2CRD5R23DZ&xl=34702984&dn=Motorcycle Dyn
+        -> 403 len=566 magic=b'<!DOCT'
+      GET https://libgen.la/ed2k://|file|Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epu
+        -> 403 len=566 magic=b'<!DOCT'
+      GET https://libgen.la/magnet:?xt=urn:tree:tiger:2ZDLOLYD3MICOIYEIH5NYKKNUI4ICTZEML7AM4A&xl=34702984&dn=M
+        -> 403 len=566 magic=b'<!DOCT'
+      GET https://libgen.la/cdn-cgi/l/email-protection
+        -> 404 len=4713 magic=b'\n<!DOC'
+
+  FOLLOW https://libgen.la/edition.php?id=137286556
+    -> 200 text/html; charset=UTF-8 len=28973 magic=b'\xef\xbb\xbf<!D'
+    sub links: 9 ['https://cloudflare-ipfs.com/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'https://gateway.ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'http://localhost:8080/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'magnet:?xt=urn:sha1:IIOKMRK5H7RKTGLN44ULWJ2CRD5R23DZ&xl=34702984&dn=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub']
+      GET https://cloudflare-ipfs.com/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?file
+        err ConnectionError
+      GET https://gateway.ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename
+        -> 403 len=6376 magic=b'<!DOCT'
+      GET https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?fil
+        -> 404 len=89 magic=b'The re'
+      GET http://localhost:8080/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=M
+        err ConnectionError
+      GET http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/LG/01509000/dd531d3b702a951c8c
+        err ConnectionError
+      GET https://libgen.la/magnet:?xt=urn:sha1:IIOKMRK5H7RKTGLN44ULWJ2CRD5R23DZ&xl=34702984&dn=Motorcycle Dyn
+        -> 403 len=566 magic=b'<!DOCT'
+      GET https://libgen.la/ed2k://|file|Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epu
+        -> 403 len=566 magic=b'<!DOCT'
+      GET https://libgen.la/magnet:?xt=urn:tree:tiger:2ZDLOLYD3MICOIYEIH5NYKKNUI4ICTZEML7AM4A&xl=34702984&dn=M
+        -> 403 len=566 magic=b'<!DOCT'
+      GET https://libgen.la/cdn-cgi/l/email-protection
+        -> 404 len=4713 magic=b'\n<!DOC'
+
+  FOLLOW https://libgen.la/file.php?id=92540206
+    -> 200 text/html; charset=UTF-8 len=26110 magic=b'\xef\xbb\xbf<!D'
+    sub links: 9 ['https://cloudflare-ipfs.com/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'https://gateway.ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'http://localhost:8080/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'magnet:?xt=urn:sha1:IIOKMRK5H7RKTGLN44ULWJ2CRD5R23DZ&xl=34702984&dn=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub']
+      GET https://cloudflare-ipfs.com/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?file
+        err ConnectionError
+      GET https://gateway.ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename
+        -> 403 len=6376 magic=b'<!DOCT'
+      GET https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?fil
+        -> 404 len=89 magic=b'The re'
+      GET http://localhost:8080/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=M
+        err ConnectionError
+      GET http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/LG/01509000/dd531d3b702a951c8c
+        err ConnectionError
+      GET https://libgen.la/magnet:?xt=urn:sha1:IIOKMRK5H7RKTGLN44ULWJ2CRD5R23DZ&xl=34702984&dn=Motorcycle Dyn
+        -> 403 len=566 magic=b'<!DOCT'
+      GET https://libgen.la/ed2k://|file|Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epu
+        -> 403 len=566 magic=b'<!DOCT'
+      GET https://libgen.la/magnet:?xt=urn:tree:tiger:2ZDLOLYD3MICOIYEIH5NYKKNUI4ICTZEML7AM4A&xl=34702984&dn=M
+        -> 403 len=566 magic=b'<!DOCT'
+      GET https://libgen.la/cdn-cgi/l/email-protection
+        -> 404 len=4713 magic=b'\n<!DOC'
+
+  FOLLOW https://libgen.la/ads.php?md5=dd531d3b702a951c8c899228e8ea8800
+    -> 200 text/html; charset=UTF-8 len=21155 magic=b'<!DOCT'
+    sub links: 2 ['get.php?md5=dd531d3b702a951c8c899228e8ea8800&key=F9LHQ0ATJHX44FJZ', '/cdn-cgi/l/email-protection']
+      GET https://libgen.la/get.php?md5=dd531d3b702a951c8c899228e8ea8800&key=F9LHQ0ATJHX44FJZ
+        err ChunkedEncodingError
+      GET https://libgen.la/cdn-cgi/l/email-protection
+        -> 404 len=4713 magic=b'\n<!DOC'
+
+  FOLLOW https://libgen.xyz/book/dd531d3b702a951c8c899228e8ea8800?utm_source=libgen.li
+    -> 200 text/html;charset=utf-8 len=1517 magic=b'<!DOCT'
+    sub links: 0 []
+
+  FOLLOW https://en.annas-archive.gl/md5/dd531d3b702a951c8c899228e8ea8800?r=Ax2w6jC
+    -> 500 text/html; charset=utf-8 len=437 magic=b'<!doct'
+
+  FOLLOW https://libgen.pw/book/dd531d3b702a951c8c899228e8ea8800?utm_source=libgen.li
+    -> 200 text/html;charset=utf-8 len=1517 magic=b'<!DOCT'
+    sub links: 0 []
+
+  FOLLOW https://randombook.org/book/dd531d3b702a951c8c899228e8ea8800?utm_source=libgen.li
+    -> 200 text/html;charset=utf-8 len=1517 magic=b'<!DOCT'
+    sub links: 0 []
+
+##### HOST libgen.bz #####
+
+[ROW] Motorcycle Dynamics Second Edition 1430308613; 9781430308614 b l 1509289
+  links in row (8):
+    [Motorcycle Dynamics Second Edition] edition.php?id=137286556
+    [1430308613; 9781430308614] edition.php?id=137286556
+    [33 MB] /file.php?id=92540206
+    [1] /ads.php?md5=dd531d3b702a951c8c899228e8ea8800
+    [2] https://libgen.xyz/book/dd531d3b702a951c8c899228e8ea8800?utm_source=libgen.li
+    [3] https://en.annas-archive.gl/md5/dd531d3b702a951c8c899228e8ea8800?r=Ax2w6jC
+    [4] https://libgen.pw/book/dd531d3b702a951c8c899228e8ea8800?utm_source=libgen.li
+    [5] https://randombook.org/book/dd531d3b702a951c8c899228e8ea8800?utm_source=libgen.li
+
+  FOLLOW https://libgen.bz/edition.php?id=137286556
+    -> 200 text/html; charset=UTF-8 len=28373 magic=b'\xef\xbb\xbf<!D'
+    sub links: 8 ['https://cloudflare-ipfs.com/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'https://gateway.ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'http://localhost:8080/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'magnet:?xt=urn:sha1:IIOKMRK5H7RKTGLN44ULWJ2CRD5R23DZ&xl=34702984&dn=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub']
+      GET https://cloudflare-ipfs.com/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?file
+        err ConnectionError
+      GET https://gateway.ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename
+        -> 403 len=6376 magic=b'<!DOCT'
+      GET https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?fil
+        -> 404 len=89 magic=b'The re'
+      GET http://localhost:8080/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=M
+        err ConnectionError
+      GET http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/LG/01509000/dd531d3b702a951c8c
+        err ConnectionError
+      GET https://libgen.bz/magnet:?xt=urn:sha1:IIOKMRK5H7RKTGLN44ULWJ2CRD5R23DZ&xl=34702984&dn=Motorcycle Dyn
+        -> 403 len=199 magic=b'<!DOCT'
+      GET https://libgen.bz/ed2k://|file|Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epu
+        -> 403 len=199 magic=b'<!DOCT'
+      GET https://libgen.bz/magnet:?xt=urn:tree:tiger:2ZDLOLYD3MICOIYEIH5NYKKNUI4ICTZEML7AM4A&xl=34702984&dn=M
+        -> 403 len=199 magic=b'<!DOCT'
+
+  FOLLOW https://libgen.bz/edition.php?id=137286556
+    -> 200 text/html; charset=UTF-8 len=28373 magic=b'\xef\xbb\xbf<!D'
+    sub links: 8 ['https://cloudflare-ipfs.com/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'https://gateway.ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'http://localhost:8080/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'magnet:?xt=urn:sha1:IIOKMRK5H7RKTGLN44ULWJ2CRD5R23DZ&xl=34702984&dn=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub']
+      GET https://cloudflare-ipfs.com/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?file
+        err ConnectionError
+      GET https://gateway.ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename
+        -> 403 len=6376 magic=b'<!DOCT'
+      GET https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?fil
+        -> 404 len=89 magic=b'The re'
+      GET http://localhost:8080/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=M
+        err ConnectionError
+      GET http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/LG/01509000/dd531d3b702a951c8c
+        err ConnectionError
+      GET https://libgen.bz/magnet:?xt=urn:sha1:IIOKMRK5H7RKTGLN44ULWJ2CRD5R23DZ&xl=34702984&dn=Motorcycle Dyn
+        -> 403 len=199 magic=b'<!DOCT'
+      GET https://libgen.bz/ed2k://|file|Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epu
+        -> 403 len=199 magic=b'<!DOCT'
+      GET https://libgen.bz/magnet:?xt=urn:tree:tiger:2ZDLOLYD3MICOIYEIH5NYKKNUI4ICTZEML7AM4A&xl=34702984&dn=M
+        -> 403 len=199 magic=b'<!DOCT'
+
+  FOLLOW https://libgen.bz/file.php?id=92540206
+    -> 200 text/html; charset=UTF-8 len=25510 magic=b'\xef\xbb\xbf<!D'
+    sub links: 8 ['https://cloudflare-ipfs.com/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'https://gateway.ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'http://localhost:8080/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub', 'magnet:?xt=urn:sha1:IIOKMRK5H7RKTGLN44ULWJ2CRD5R23DZ&xl=34702984&dn=Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epub']
+      GET https://cloudflare-ipfs.com/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?file
+        err ConnectionError
+      GET https://gateway.ipfs.io/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename
+        -> 403 len=6376 magic=b'<!DOCT'
+      GET https://gateway.pinata.cloud/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?fil
+        -> 404 len=89 magic=b'The re'
+      GET http://localhost:8080/ipfs/bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc?filename=M
+        err ConnectionError
+      GET http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/LG/01509000/dd531d3b702a951c8c
+        err ConnectionError
+      GET https://libgen.bz/magnet:?xt=urn:sha1:IIOKMRK5H7RKTGLN44ULWJ2CRD5R23DZ&xl=34702984&dn=Motorcycle Dyn
+        -> 403 len=199 magic=b'<!DOCT'
+      GET https://libgen.bz/ed2k://|file|Motorcycle Dynamics{Vittore Cossalter}(2006, Lulu.com){137286556}.epu
+        -> 403 len=199 magic=b'<!DOCT'
+      GET https://libgen.bz/magnet:?xt=urn:tree:tiger:2ZDLOLYD3MICOIYEIH5NYKKNUI4ICTZEML7AM4A&xl=34702984&dn=M
+        -> 403 len=199 magic=b'<!DOCT'
+
+  FOLLOW https://libgen.bz/ads.php?md5=dd531d3b702a951c8c899228e8ea8800
+    -> 200 text/html; charset=UTF-8 len=20555 magic=b'<!DOCT'
+    sub links: 1 ['get.php?md5=dd531d3b702a951c8c899228e8ea8800&key=I7GU2ITINXKSWE1Y']
+      GET https://libgen.bz/get.php?md5=dd531d3b702a951c8c899228e8ea8800&key=I7GU2ITINXKSWE1Y
+        -> 503 len=959 magic=b'<html>'
+
+  FOLLOW https://libgen.xyz/book/dd531d3b702a951c8c899228e8ea8800?utm_source=libgen.li
+    -> 200 text/html;charset=utf-8 len=1517 magic=b'<!DOCT'
+    sub links: 0 []
+
+  FOLLOW https://en.annas-archive.gl/md5/dd531d3b702a951c8c899228e8ea8800?r=Ax2w6jC
+    -> 500 text/html; charset=utf-8 len=437 magic=b'<!doct'
+
+  FOLLOW https://libgen.pw/book/dd531d3b702a951c8c899228e8ea8800?utm_source=libgen.li
+    -> 200 text/html;charset=utf-8 len=1517 magic=b'<!DOCT'
+    sub links: 0 []
+
+  FOLLOW https://randombook.org/book/dd531d3b702a951c8c899228e8ea8800?utm_source=libgen.li
+    -> 200 text/html;charset=utf-8 len=1517 magic=b'<!DOCT'
+    sub links: 0 []
+
+written results/v10_report.json
