@@ -1,78 +1,590 @@
 ================================================================
-v12: final download attempt
-  md5 : dd531d3b702a951c8c899228e8ea8800
-  cid : bafykbzacebduug3k744h3qwnp3b4vlvfanshctrngh5b567qxmkm4oagneghc
+v13: decode get.php redirect page
 ================================================================
 
-===== IPFS gateways =====
-  https://ipfs.io/ipfs/ -> 403 len=5951
-  https://dweb.link/ipfs/ -> 403 len=5953
-  https://cloudflare-ipfs.com/ipfs/ -> ConnectionError
-  https://ipfs.dweb.link/ipfs/ -> ConnectionError
-  https://gateway.pinata.cloud/ipfs/ -> 404 len=89
-  https://nftstorage.link/ipfs/ -> 403 len=5951
-  https://ipfs.fleek.co/ipfs/ -> 522 len=7225
-  https://w3s.link/ipfs/ -> 403 len=5953
-  https://4everland.io/ipfs/ -> 451 len=0
-  https://ipfs.eth.aragon.network/ipfs/ -> SSLError
+===== https://libgen.li/get.php?md5=dd531d3b702a951c8c899228e8ea8800 =====
+  200 len=20670
+  saved results/getpage_libgen_li.html
+  meta refresh: []
+  <a> links: 71
+    [a|] /index.php
+    [a|NEWS (current)] /community/app.php/article/news
+    [a|FORUM (current)] /community/
+    [a|LOGIN] /community/ucp.php?mode=login
+    [a|Register] /community/ucp.php?mode=register
+    [a|DOWNLOAD] #
+    [a|Mirrors] /mirrors.php
+    [a|TOR] http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/
+    [a|Torrents] /torrents/
+    [a|Torrents status] https://ipdl.cat/data/torrents.html
+    [a|Usenet (*.nzb)] /nzb/
+    [a|Soft] /soft/
+    [a|Libgen] /dirlist.php?dir=dbdumps
+    [a|libgen.rs (gen.lib.rus.ec)] http://libgen.rs/dbdumps/
+    [a|UPLOAD] librarian.php
+    [a|FTP] ftp://ftp.libgen.bz/upload/
+    [a|LAST] /index.php?req=fmode:last&topics1=all
+    [a|Files] /index.php?req=fmode:last&topics1=all
+    [a|Libgen] /index.php?req=fmode:last&topics%5B%5D=l
+    [a|Scientific Articles] /index.php?req=fmode:last&topics%5B%5D=a
+    [a|Fiction] /index.php?req=fmode:last&topics%5B%5D=f
+    [a|Comics] /index.php?req=fmode:last&topics%5B%5D=c
+    [a|Magazines] /index.php?req=fmode:last&topics%5B%5D=m
+    [a|Standards] /index.php?req=fmode:last&topics%5B%5D=s
+    [a|Fiction RUS] /index.php?req=fmode:last&topics%5B%5D=r
+    [a|Editions] /index.php?req=mode:last&curtab=e
+    [a|Series] /index.php?req=mode:last&curtab=s
+    [a|Publishers] /index.php?req=mode:last&curtab=p
+    [a|Authors] /index.php?req=mode:last&curtab=a
+    [a|Works] /index.php?req=mode:last&curtab=w
+  js location urls: ['/rss/index.php', '/img/favicon.ico', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css', '/css/font.min.css', '/css/dark-mode.css', '/index.php', '/community/app.php/article/news', '/community/', '/community/ucp.php?mode=login', '/community/ucp.php?mode=register', '#', '/mirrors.php', 'http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/', '/torrents/', 'https://ipdl.cat/data/torrents.html', '/nzb/', '/soft/', '/dirlist.php?dir=dbdumps', 'http://libgen.rs/dbdumps/', '/magz0/', '/fict0/', '/comics4/', 'librarian.php', 'ftp://ftp.libgen.bz/upload/', '/index.php?req=fmode:last&topics1=all', '/index.php?req=fmode:last&topics1=all', '/index.php?req=fmode:last&topics%5B%5D=l', '/index.php?req=fmode:last&topics%5B%5D=a', '/index.php?req=fmode:last&topics%5B%5D=f', '/index.php?req=fmode:last&topics%5B%5D=c', '/index.php?req=fmode:last&topics%5B%5D=m', '/index.php?req=fmode:last&topics%5B%5D=s', '/index.php?req=fmode:last&topics%5B%5D=r', '/index.php?req=mode:last&curtab=e', '/index.php?req=mode:last&curtab=s', '/index.php?req=mode:last&curtab=p', '/index.php?req=mode:last&curtab=f', '/index.php?req=mode:last&curtab=a', '/index.php?req=mode:last&curtab=w', '#', 'json.php', 'rss.php', 'top.php', 'stat.php', 'topics.php', 'batchsearchindex.php', 'biblioservice.php', 'https://wiki.mhut.org/software:libgen_desktop', '/code/', '/soft/', '/import/', 'https://z-library.se/fulltext/', 'topics.php', '#', 'http://sci-hub.ru', 'http://magzdb.org', 'http://nlr.ru/rlin/Periodika_rus.php', 'http://rsl.ru/', 'http://loc.gov/', 'https://comicvine.gamespot.com/', 'http://cyberleninka.ru/', 'http://lib.rus.ec/', 'http://flibusta.is/', 'http://goodreads.com/', 'http://worldcat.org/', 'https://wiki.archiveteam.org/', 'https://www.reddit.com/r/libgen/', 'http://annas-archive.org/', 'https://welib.org/', 'https://open-slum.org/', 'index.php?req=mode:req&curtab=e', 'setlang.php?md5=dd531d3b702a951c8c899228e8ea8800&lang=ru', 'get.php?md5=dd531d3b702a951c8c899228e8ea8800&key=ONM00TE8P1UOIH6T', '/covers/1509000/dd531d3b702a951c8c899228e8ea8800.jpg', 'https://www.worldcat.org/search?qt=worldcat_org_bks&q=Motorcycle%20Dynamics&fq=dt%3Abks', 'https://www.goodreads.com/search?utf8=✓&query=Motorcycle%20Dynamics', 'https://www.abebooks.com/servlet/SearchResults?tn=Motorcycle%20Dynamics&pt=book&cm_sp=pan-_-srp-_-ptbook', '#', '#', '#', 'bitcoin://bc1qlv9lwa5vncm2jjrxyhddfcvu0z3u5vn0s9672r', 'monero:48WhyKv4D9x53SyDFNYuMsHsDzuHXEcht4mWoFtXtE3k4KZ3A7goi3CQWBQQZ3A8PSK7CpwnAFKLnfGiZTAbEpcaCQCghvN']
+  js replace urls: []
+  onclick urls: []
+  GET https://libgen.lirss/index.php err ConnectionError
+  GET https://libgen.liimg/favicon.ico err ConnectionError
+  GET https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css -> 200 len=160392 ctype=text/css; charset=utf-8
+      cd= magic=b'/*!\n *'
+  GET https://libgen.licss/font.min.css err ConnectionError
+  GET https://libgen.licss/dark-mode.css err ConnectionError
+  GET https://libgen.liindex.php err ConnectionError
+  GET https://libgen.licommunity/app.php/article/news err ConnectionError
+  GET https://libgen.licommunity/ err ConnectionError
+  GET https://libgen.licommunity/ucp.php?mode=login err ConnectionError
+  GET https://libgen.licommunity/ucp.php?mode=register err ConnectionError
+  GET https://libgen.li# -> 200 len=28470 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.limirrors.php err ConnectionError
+  GET http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/ err ConnectionError
+  GET https://libgen.litorrents/ err ConnectionError
+  GET https://ipdl.cat/data/torrents.html err ConnectionError
+  GET https://libgen.linzb/ err ConnectionError
+  GET https://libgen.lisoft/ err ConnectionError
+  GET https://libgen.lidirlist.php?dir=dbdumps err ConnectionError
+  GET http://libgen.rs/dbdumps/ err ConnectTimeout
+  GET https://libgen.limagz0/ err ConnectionError
+  GET https://libgen.lifict0/ err ConnectionError
+  GET https://libgen.licomics4/ err ConnectionError
+  GET https://libgen.lilibrarian.php err ConnectionError
+  GET https://libgen.liftp://ftp.libgen.bz/upload/ err ConnectionError
+  GET https://libgen.liindex.php?req=fmode:last&topics1=all err ConnectionError
+  GET https://libgen.liindex.php?req=fmode:last&topics1=all err ConnectionError
+  GET https://libgen.liindex.php?req=fmode:last&topics%5B%5D=l err ConnectionError
+  GET https://libgen.liindex.php?req=fmode:last&topics%5B%5D=a err ConnectionError
+  GET https://libgen.liindex.php?req=fmode:last&topics%5B%5D=f err ConnectionError
+  GET https://libgen.liindex.php?req=fmode:last&topics%5B%5D=c err ConnectionError
+  GET https://libgen.liindex.php?req=fmode:last&topics%5B%5D=m err ConnectionError
+  GET https://libgen.liindex.php?req=fmode:last&topics%5B%5D=s err ConnectionError
+  GET https://libgen.liindex.php?req=fmode:last&topics%5B%5D=r err ConnectionError
+  GET https://libgen.liindex.php?req=mode:last&curtab=e err ConnectionError
+  GET https://libgen.liindex.php?req=mode:last&curtab=s err ConnectionError
+  GET https://libgen.liindex.php?req=mode:last&curtab=p err ConnectionError
+  GET https://libgen.liindex.php?req=mode:last&curtab=f err ConnectionError
+  GET https://libgen.liindex.php?req=mode:last&curtab=a err ConnectionError
+  GET https://libgen.liindex.php?req=mode:last&curtab=w err ConnectionError
+  GET https://libgen.li# -> 200 len=28471 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.lijson.php err ConnectionError
+  GET https://libgen.lirss.php err ConnectionError
+  GET https://libgen.litop.php err ConnectionError
+  GET https://libgen.listat.php err ConnectionError
+  GET https://libgen.litopics.php err ConnectionError
+  GET https://libgen.libatchsearchindex.php err ConnectionError
+  GET https://libgen.libiblioservice.php err ConnectionError
+  GET https://wiki.mhut.org/software:libgen_desktop err ConnectTimeout
+  GET https://libgen.licode/ err ConnectionError
+  GET https://libgen.lisoft/ err ConnectionError
+  GET https://libgen.liimport/ err ConnectionError
+  GET https://z-library.se/fulltext/ err ConnectTimeout
+  GET https://libgen.litopics.php err ConnectionError
+  GET https://libgen.li# -> 200 len=28470 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET http://sci-hub.ru -> 200 len=157108 ctype=text/html; charset=UTF-8
+      cd= magic=b'<!DOCT'
+  GET http://magzdb.org -> 402 len=562 ctype=text/html
+      cd= magic=b'<html>'
+  GET http://nlr.ru/rlin/Periodika_rus.php -> 200 len=22943 ctype=text/html; charset=windows-125
+      cd= magic=b'<!DOCT'
+  GET http://rsl.ru/ -> 200 len=505558 ctype=text/html;charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://loc.gov/ -> 200 len=77590 ctype=text/html
+      cd= magic=b'<!DOCT'
+  GET https://comicvine.gamespot.com/ -> 403 len=5658 ctype=text/html; charset=UTF-8
+      cd= magic=b'<!DOCT'
+  GET http://cyberleninka.ru/ -> 200 len=16236 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://lib.rus.ec/ -> 200 len=104907 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://flibusta.is/ -> 200 len=47952 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://goodreads.com/ -> 200 len=56338 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://worldcat.org/ -> 200 len=459856 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET https://wiki.archiveteam.org/ -> 200 len=55156 ctype=text/html; charset=UTF-8
+      cd= magic=b'<!DOCT'
+  GET https://www.reddit.com/r/libgen/ -> 403 len=190240 ctype=text/html
+      cd= magic=b'<body '
+  GET http://annas-archive.org/ err ConnectionError
+  GET https://welib.org/ -> 200 len=443512 ctype=text/html; charset=utf-8
+      cd= magic=b'<!doct'
+  GET https://open-slum.org/ -> 200 len=116342 ctype=text/html
+      cd= magic=b'<!DOCT'
+  GET https://libgen.liindex.php?req=mode:req&curtab=e err ConnectionError
+  GET https://libgen.lisetlang.php?md5=dd531d3b702a951c8c899228e8ea8800&lang=ru err ConnectionError
+  GET https://libgen.liget.php?md5=dd531d3b702a951c8c899228e8ea8800&key=ONM00TE8P1UOIH err ConnectionError
+  GET https://libgen.licovers/1509000/dd531d3b702a951c8c899228e8ea8800.jpg err ConnectionError
+  GET https://www.worldcat.org/search?qt=worldcat_org_bks&q=Motorcycle%20Dynamics&fq=dt%3Abks -> 429 len=7838 ctype=text/html; charset=UTF-8
+      cd= magic=b'<!doct'
+  GET https://www.goodreads.com/search?utf8=✓&query=Motorcycle%20Dynamics -> 200 len=187293 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET https://www.abebooks.com/servlet/SearchResults?tn=Motorcycle%20Dynamics&pt=book&cm_sp=pan- -> 200 len=743310 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET https://libgen.li# -> 200 len=28470 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.li# -> 200 len=28470 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.li# -> 200 len=28470 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.libitcoin://bc1qlv9lwa5vncm2jjrxyhddfcvu0z3u5vn0s9672r err ConnectionError
+  GET https://libgen.limonero:48WhyKv4D9x53SyDFNYuMsHsDzuHXEcht4mWoFtXtE3k4KZ3A7goi3CQ err InvalidURL
 
-===== libgen /LG/ storage paths =====
-  https://libgen.li/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle%20Dyna -> 404 len=196 magic=b'<!DO'
-  https://libgen.li/LG/01509000/dd531d3b702a951c8c899228e8ea8800 -> 404 len=196 magic=b'<!DO'
-  https://libgen.li/main/dd531d3b702a951c8c899228e8ea8800 -> 404 len=196 magic=b'<!DO'
-  https://libgen.li/get.php?md5=dd531d3b702a951c8c899228e8ea8800 -> 200 len=20670 magic=b'<!DO'
-  https://libgen.la/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle%20Dyna -> 404 len=196 magic=b'<!DO'
-  https://libgen.la/LG/01509000/dd531d3b702a951c8c899228e8ea8800 -> 404 len=196 magic=b'<!DO'
-  https://libgen.la/main/dd531d3b702a951c8c899228e8ea8800 -> 404 len=196 magic=b'<!DO'
-  https://libgen.la/get.php?md5=dd531d3b702a951c8c899228e8ea8800 -> 200 len=20788 magic=b'<!DO'
-  https://libgen.bz/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle%20Dyna -> 404 len=196 magic=b'<!DO'
-  https://libgen.bz/LG/01509000/dd531d3b702a951c8c899228e8ea8800 -> 404 len=196 magic=b'<!DO'
-  https://libgen.bz/main/dd531d3b702a951c8c899228e8ea8800 -> 404 len=196 magic=b'<!DO'
-  https://libgen.bz/get.php?md5=dd531d3b702a951c8c899228e8ea8800 -> 200 len=20555 magic=b'<!DO'
-  https://libgen.vg/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle%20Dyna -> 404 len=196 magic=b'<!DO'
-  https://libgen.vg/LG/01509000/dd531d3b702a951c8c899228e8ea8800 -> 404 len=196 magic=b'<!DO'
-  https://libgen.vg/main/dd531d3b702a951c8c899228e8ea8800 -> 404 len=196 magic=b'<!DO'
-  https://libgen.vg/get.php?md5=dd531d3b702a951c8c899228e8ea8800 -> 200 len=20555 magic=b'<!DO'
-  https://libgen.gs/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle%20Dyna -> ConnectionError
-  https://libgen.gs/LG/01509000/dd531d3b702a951c8c899228e8ea8800 -> ConnectionError
-  https://libgen.gs/main/dd531d3b702a951c8c899228e8ea8800 -> ConnectionError
-  https://libgen.gs/get.php?md5=dd531d3b702a951c8c899228e8ea8800 -> ConnectionError
-  https://libgen.pm/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle%20Dyna -> ConnectionError
-  https://libgen.pm/LG/01509000/dd531d3b702a951c8c899228e8ea8800 -> ConnectionError
-  https://libgen.pm/main/dd531d3b702a951c8c899228e8ea8800 -> ConnectionError
-  https://libgen.pm/get.php?md5=dd531d3b702a951c8c899228e8ea8800 -> ConnectionError
-  https://libgen.is/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle%20Dyna -> ConnectTimeout
-  https://libgen.is/LG/01509000/dd531d3b702a951c8c899228e8ea8800 -> ConnectTimeout
-  https://libgen.is/main/dd531d3b702a951c8c899228e8ea8800 -> ConnectTimeout
-  https://libgen.is/get.php?md5=dd531d3b702a951c8c899228e8ea8800 -> ConnectTimeout
-  https://libgen.rs/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle%20Dyna -> ConnectTimeout
-  https://libgen.rs/LG/01509000/dd531d3b702a951c8c899228e8ea8800 -> ConnectTimeout
-  https://libgen.rs/main/dd531d3b702a951c8c899228e8ea8800 -> ConnectTimeout
-  https://libgen.rs/get.php?md5=dd531d3b702a951c8c899228e8ea8800 -> ConnectTimeout
-  https://libgen.st/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle%20Dyna -> ConnectTimeout
-  https://libgen.st/LG/01509000/dd531d3b702a951c8c899228e8ea8800 -> ConnectTimeout
-  https://libgen.st/main/dd531d3b702a951c8c899228e8ea8800 -> ConnectTimeout
-  https://libgen.st/get.php?md5=dd531d3b702a951c8c899228e8ea8800 -> ConnectTimeout
-  https://libgen.fun/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle%20Dyn -> SSLError
-  https://libgen.fun/LG/01509000/dd531d3b702a951c8c899228e8ea8800 -> SSLError
-  https://libgen.fun/main/dd531d3b702a951c8c899228e8ea8800 -> SSLError
-  https://libgen.fun/get.php?md5=dd531d3b702a951c8c899228e8ea8800 -> SSLError
-  https://libgen.rocks/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle%20D -> SSLError
-  https://libgen.rocks/LG/01509000/dd531d3b702a951c8c899228e8ea8800 -> SSLError
-  https://libgen.rocks/main/dd531d3b702a951c8c899228e8ea8800 -> SSLError
-  https://libgen.rocks/get.php?md5=dd531d3b702a951c8c899228e8ea8800 -> SSLError
-  https://cdn1.booksdl.org/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle -> ConnectionError
-  https://cdn1.booksdl.org/LG/01509000/dd531d3b702a951c8c899228e8ea8800 -> ConnectionError
-  https://cdn1.booksdl.org/main/dd531d3b702a951c8c899228e8ea8800 -> ConnectionError
-  https://cdn1.booksdl.org/get.php?md5=dd531d3b702a951c8c899228e8ea8800 -> ConnectionError
-  https://libgen.io/LG/01509000/dd531d3b702a951c8c899228e8ea8800/Motorcycle%20Dyna -> ConnectionError
-  https://libgen.io/LG/01509000/dd531d3b702a951c8c899228e8ea8800 -> ConnectionError
-  https://libgen.io/main/dd531d3b702a951c8c899228e8ea8800 -> ConnectionError
-  https://libgen.io/get.php?md5=dd531d3b702a951c8c899228e8ea8800 -> ConnectionError
+===== https://libgen.la/get.php?md5=dd531d3b702a951c8c899228e8ea8800 =====
+  200 len=20788
+  saved results/getpage_libgen_la.html
+  meta refresh: []
+  <a> links: 72
+    [a|] /index.php
+    [a|NEWS (current)] /community/app.php/article/news
+    [a|FORUM (current)] /community/
+    [a|LOGIN] /community/ucp.php?mode=login
+    [a|Register] /community/ucp.php?mode=register
+    [a|DOWNLOAD] #
+    [a|Mirrors] /mirrors.php
+    [a|TOR] http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/
+    [a|Torrents] /torrents/
+    [a|Torrents status] https://ipdl.cat/data/torrents.html
+    [a|Usenet (*.nzb)] /nzb/
+    [a|Soft] /soft/
+    [a|Libgen] /dirlist.php?dir=dbdumps
+    [a|libgen.rs (gen.lib.rus.ec)] http://libgen.rs/dbdumps/
+    [a|UPLOAD] librarian.php
+    [a|FTP] ftp://ftp.libgen.bz/upload/
+    [a|LAST] /index.php?req=fmode:last&topics1=all
+    [a|Files] /index.php?req=fmode:last&topics1=all
+    [a|Libgen] /index.php?req=fmode:last&topics%5B%5D=l
+    [a|Scientific Articles] /index.php?req=fmode:last&topics%5B%5D=a
+    [a|Fiction] /index.php?req=fmode:last&topics%5B%5D=f
+    [a|Comics] /index.php?req=fmode:last&topics%5B%5D=c
+    [a|Magazines] /index.php?req=fmode:last&topics%5B%5D=m
+    [a|Standards] /index.php?req=fmode:last&topics%5B%5D=s
+    [a|Fiction RUS] /index.php?req=fmode:last&topics%5B%5D=r
+    [a|Editions] /index.php?req=mode:last&curtab=e
+    [a|Series] /index.php?req=mode:last&curtab=s
+    [a|Publishers] /index.php?req=mode:last&curtab=p
+    [a|Authors] /index.php?req=mode:last&curtab=a
+    [a|Works] /index.php?req=mode:last&curtab=w
+  js location urls: ['/rss/index.php', '/img/favicon.ico', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css', '/css/font.min.css', '/css/dark-mode.css', '/index.php', '/community/app.php/article/news', '/community/', '/community/ucp.php?mode=login', '/community/ucp.php?mode=register', '#', '/mirrors.php', 'http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/', '/torrents/', 'https://ipdl.cat/data/torrents.html', '/nzb/', '/soft/', '/dirlist.php?dir=dbdumps', 'http://libgen.rs/dbdumps/', '/magz0/', '/fict0/', '/comics4/', 'librarian.php', 'ftp://ftp.libgen.bz/upload/', '/index.php?req=fmode:last&topics1=all', '/index.php?req=fmode:last&topics1=all', '/index.php?req=fmode:last&topics%5B%5D=l', '/index.php?req=fmode:last&topics%5B%5D=a', '/index.php?req=fmode:last&topics%5B%5D=f', '/index.php?req=fmode:last&topics%5B%5D=c', '/index.php?req=fmode:last&topics%5B%5D=m', '/index.php?req=fmode:last&topics%5B%5D=s', '/index.php?req=fmode:last&topics%5B%5D=r', '/index.php?req=mode:last&curtab=e', '/index.php?req=mode:last&curtab=s', '/index.php?req=mode:last&curtab=p', '/index.php?req=mode:last&curtab=f', '/index.php?req=mode:last&curtab=a', '/index.php?req=mode:last&curtab=w', '#', 'json.php', 'rss.php', 'top.php', 'stat.php', 'topics.php', 'batchsearchindex.php', 'biblioservice.php', 'https://wiki.mhut.org/software:libgen_desktop', '/code/', '/soft/', '/import/', 'https://z-library.se/fulltext/', 'topics.php', '#', 'http://sci-hub.ru', 'http://magzdb.org', 'http://nlr.ru/rlin/Periodika_rus.php', 'http://rsl.ru/', 'http://loc.gov/', 'https://comicvine.gamespot.com/', 'http://cyberleninka.ru/', 'http://lib.rus.ec/', 'http://flibusta.is/', 'http://goodreads.com/', 'http://worldcat.org/', 'https://wiki.archiveteam.org/', 'https://www.reddit.com/r/libgen/', 'http://annas-archive.org/', 'https://welib.org/', 'https://open-slum.org/', 'index.php?req=mode:req&curtab=e', 'setlang.php?md5=dd531d3b702a951c8c899228e8ea8800&lang=ru', 'get.php?md5=dd531d3b702a951c8c899228e8ea8800&key=AIRUHE90QTIRH7NW', '/covers/1509000/dd531d3b702a951c8c899228e8ea8800.jpg', 'https://www.worldcat.org/search?qt=worldcat_org_bks&q=Motorcycle%20Dynamics&fq=dt%3Abks', 'https://www.goodreads.com/search?utf8=✓&query=Motorcycle%20Dynamics', 'https://www.abebooks.com/servlet/SearchResults?tn=Motorcycle%20Dynamics&pt=book&cm_sp=pan-_-srp-_-ptbook', '#', '#', '#', 'bitcoin://bc1qlv9lwa5vncm2jjrxyhddfcvu0z3u5vn0s9672r', 'monero:48WhyKv4D9x53SyDFNYuMsHsDzuHXEcht4mWoFtXtE3k4KZ3A7goi3CQWBQQZ3A8PSK7CpwnAFKLnfGiZTAbEpcaCQCghvN', '/cdn-cgi/l/email-protection']
+  js replace urls: []
+  onclick urls: []
+  GET https://libgen.larss/index.php err ConnectionError
+  GET https://libgen.laimg/favicon.ico err ConnectionError
+  GET https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css -> 200 len=160392 ctype=text/css; charset=utf-8
+      cd= magic=b'/*!\n *'
+  GET https://libgen.lacss/font.min.css err ConnectionError
+  GET https://libgen.lacss/dark-mode.css err ConnectionError
+  GET https://libgen.laindex.php err ConnectionError
+  GET https://libgen.lacommunity/app.php/article/news err ConnectionError
+  GET https://libgen.lacommunity/ err ConnectionError
+  GET https://libgen.lacommunity/ucp.php?mode=login err ConnectionError
+  GET https://libgen.lacommunity/ucp.php?mode=register err ConnectionError
+  GET https://libgen.la# -> 200 len=24660 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.lamirrors.php err ConnectionError
+  GET http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/ err ConnectionError
+  GET https://libgen.latorrents/ err ConnectionError
+  GET https://ipdl.cat/data/torrents.html err ConnectionError
+  GET https://libgen.lanzb/ err ConnectionError
+  GET https://libgen.lasoft/ err ConnectionError
+  GET https://libgen.ladirlist.php?dir=dbdumps err ConnectionError
+  GET http://libgen.rs/dbdumps/ err ConnectTimeout
+  GET https://libgen.lamagz0/ err ConnectionError
+  GET https://libgen.lafict0/ err ConnectionError
+  GET https://libgen.lacomics4/ err ConnectionError
+  GET https://libgen.lalibrarian.php err ConnectionError
+  GET https://libgen.laftp://ftp.libgen.bz/upload/ err ConnectionError
+  GET https://libgen.laindex.php?req=fmode:last&topics1=all err ConnectionError
+  GET https://libgen.laindex.php?req=fmode:last&topics1=all err ConnectionError
+  GET https://libgen.laindex.php?req=fmode:last&topics%5B%5D=l err ConnectionError
+  GET https://libgen.laindex.php?req=fmode:last&topics%5B%5D=a err ConnectionError
+  GET https://libgen.laindex.php?req=fmode:last&topics%5B%5D=f err ConnectionError
+  GET https://libgen.laindex.php?req=fmode:last&topics%5B%5D=c err ConnectionError
+  GET https://libgen.laindex.php?req=fmode:last&topics%5B%5D=m err ConnectionError
+  GET https://libgen.laindex.php?req=fmode:last&topics%5B%5D=s err ConnectionError
+  GET https://libgen.laindex.php?req=fmode:last&topics%5B%5D=r err ConnectionError
+  GET https://libgen.laindex.php?req=mode:last&curtab=e err ConnectionError
+  GET https://libgen.laindex.php?req=mode:last&curtab=s err ConnectionError
+  GET https://libgen.laindex.php?req=mode:last&curtab=p err ConnectionError
+  GET https://libgen.laindex.php?req=mode:last&curtab=f err ConnectionError
+  GET https://libgen.laindex.php?req=mode:last&curtab=a err ConnectionError
+  GET https://libgen.laindex.php?req=mode:last&curtab=w err ConnectionError
+  GET https://libgen.la# -> 200 len=28703 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.lajson.php err ConnectionError
+  GET https://libgen.larss.php err ConnectionError
+  GET https://libgen.latop.php err ConnectionError
+  GET https://libgen.lastat.php err ConnectionError
+  GET https://libgen.latopics.php err ConnectionError
+  GET https://libgen.labatchsearchindex.php err ConnectionError
+  GET https://libgen.labiblioservice.php err ConnectionError
+  GET https://wiki.mhut.org/software:libgen_desktop err ConnectTimeout
+  GET https://libgen.lacode/ err ConnectionError
+  GET https://libgen.lasoft/ err ConnectionError
+  GET https://libgen.laimport/ err ConnectionError
+  GET https://z-library.se/fulltext/ err ConnectTimeout
+  GET https://libgen.latopics.php err ConnectionError
+  GET https://libgen.la# -> 200 len=28703 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET http://sci-hub.ru -> 200 len=163739 ctype=text/html; charset=UTF-8
+      cd= magic=b'<!DOCT'
+  GET http://magzdb.org -> 402 len=562 ctype=text/html
+      cd= magic=b'<html>'
+  GET http://nlr.ru/rlin/Periodika_rus.php -> 200 len=22943 ctype=text/html; charset=windows-125
+      cd= magic=b'<!DOCT'
+  GET http://rsl.ru/ -> 200 len=505558 ctype=text/html;charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://loc.gov/ -> 200 len=77590 ctype=text/html
+      cd= magic=b'<!DOCT'
+  GET https://comicvine.gamespot.com/ -> 403 len=5658 ctype=text/html; charset=UTF-8
+      cd= magic=b'<!DOCT'
+  GET http://cyberleninka.ru/ -> 200 len=16236 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://lib.rus.ec/ -> 200 len=104907 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://flibusta.is/ -> 200 len=47952 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://goodreads.com/ -> 200 len=54902 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://worldcat.org/ -> 200 len=459856 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET https://wiki.archiveteam.org/ -> 200 len=55156 ctype=text/html; charset=UTF-8
+      cd= magic=b'<!DOCT'
+  GET https://www.reddit.com/r/libgen/ -> 403 len=190240 ctype=text/html
+      cd= magic=b'<body '
+  GET http://annas-archive.org/ err ConnectionError
+  GET https://welib.org/ -> 200 len=443512 ctype=text/html; charset=utf-8
+      cd= magic=b'<!doct'
+  GET https://open-slum.org/ -> 200 len=116342 ctype=text/html
+      cd= magic=b'<!DOCT'
+  GET https://libgen.laindex.php?req=mode:req&curtab=e err ConnectionError
+  GET https://libgen.lasetlang.php?md5=dd531d3b702a951c8c899228e8ea8800&lang=ru err ConnectionError
+  GET https://libgen.laget.php?md5=dd531d3b702a951c8c899228e8ea8800&key=AIRUHE90QTIRH7 err ConnectionError
+  GET https://libgen.lacovers/1509000/dd531d3b702a951c8c899228e8ea8800.jpg err ConnectionError
+  GET https://www.worldcat.org/search?qt=worldcat_org_bks&q=Motorcycle%20Dynamics&fq=dt%3Abks -> 429 len=7838 ctype=text/html; charset=UTF-8
+      cd= magic=b'<!doct'
+  GET https://www.goodreads.com/search?utf8=✓&query=Motorcycle%20Dynamics -> 200 len=187007 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET https://www.abebooks.com/servlet/SearchResults?tn=Motorcycle%20Dynamics&pt=book&cm_sp=pan- -> 200 len=801511 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET https://libgen.la# -> 200 len=28703 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.la# -> 200 len=28703 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.la# -> 200 len=28703 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.labitcoin://bc1qlv9lwa5vncm2jjrxyhddfcvu0z3u5vn0s9672r err ConnectionError
+  GET https://libgen.lamonero:48WhyKv4D9x53SyDFNYuMsHsDzuHXEcht4mWoFtXtE3k4KZ3A7goi3CQ err InvalidURL
+  GET https://libgen.lacdn-cgi/l/email-protection err ConnectionError
 
-===== library.lol =====
-  https://download.library.lol/main/dd531d3b702a951c8c899228e8ea8800 -> ConnectionError
-  https://library.lol/main/dd531d3b702a951c8c899228e8ea8800 -> SSLError
-  https://libgen.lol/main/dd531d3b702a951c8c899228e8ea8800 -> SSLError
+===== https://libgen.bz/get.php?md5=dd531d3b702a951c8c899228e8ea8800 =====
+  200 len=20555
+  saved results/getpage_libgen_bz.html
+  meta refresh: []
+  <a> links: 71
+    [a|] /index.php
+    [a|NEWS (current)] /community/app.php/article/news
+    [a|FORUM (current)] /community/
+    [a|LOGIN] /community/ucp.php?mode=login
+    [a|Register] /community/ucp.php?mode=register
+    [a|DOWNLOAD] #
+    [a|Mirrors] /mirrors.php
+    [a|TOR] http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/
+    [a|Torrents] /torrents/
+    [a|Torrents status] https://ipdl.cat/data/torrents.html
+    [a|Usenet (*.nzb)] /nzb/
+    [a|Soft] /soft/
+    [a|Libgen] /dirlist.php?dir=dbdumps
+    [a|libgen.rs (gen.lib.rus.ec)] http://libgen.rs/dbdumps/
+    [a|UPLOAD] librarian.php
+    [a|FTP] ftp://ftp.libgen.bz/upload/
+    [a|LAST] /index.php?req=fmode:last&topics1=all
+    [a|Files] /index.php?req=fmode:last&topics1=all
+    [a|Libgen] /index.php?req=fmode:last&topics%5B%5D=l
+    [a|Scientific Articles] /index.php?req=fmode:last&topics%5B%5D=a
+    [a|Fiction] /index.php?req=fmode:last&topics%5B%5D=f
+    [a|Comics] /index.php?req=fmode:last&topics%5B%5D=c
+    [a|Magazines] /index.php?req=fmode:last&topics%5B%5D=m
+    [a|Standards] /index.php?req=fmode:last&topics%5B%5D=s
+    [a|Fiction RUS] /index.php?req=fmode:last&topics%5B%5D=r
+    [a|Editions] /index.php?req=mode:last&curtab=e
+    [a|Series] /index.php?req=mode:last&curtab=s
+    [a|Publishers] /index.php?req=mode:last&curtab=p
+    [a|Authors] /index.php?req=mode:last&curtab=a
+    [a|Works] /index.php?req=mode:last&curtab=w
+  js location urls: ['/rss/index.php', '/img/favicon.ico', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css', '/css/font.min.css', '/css/dark-mode.css', '/index.php', '/community/app.php/article/news', '/community/', '/community/ucp.php?mode=login', '/community/ucp.php?mode=register', '#', '/mirrors.php', 'http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/', '/torrents/', 'https://ipdl.cat/data/torrents.html', '/nzb/', '/soft/', '/dirlist.php?dir=dbdumps', 'http://libgen.rs/dbdumps/', '/magz0/', '/fict0/', '/comics4/', 'librarian.php', 'ftp://ftp.libgen.bz/upload/', '/index.php?req=fmode:last&topics1=all', '/index.php?req=fmode:last&topics1=all', '/index.php?req=fmode:last&topics%5B%5D=l', '/index.php?req=fmode:last&topics%5B%5D=a', '/index.php?req=fmode:last&topics%5B%5D=f', '/index.php?req=fmode:last&topics%5B%5D=c', '/index.php?req=fmode:last&topics%5B%5D=m', '/index.php?req=fmode:last&topics%5B%5D=s', '/index.php?req=fmode:last&topics%5B%5D=r', '/index.php?req=mode:last&curtab=e', '/index.php?req=mode:last&curtab=s', '/index.php?req=mode:last&curtab=p', '/index.php?req=mode:last&curtab=f', '/index.php?req=mode:last&curtab=a', '/index.php?req=mode:last&curtab=w', '#', 'json.php', 'rss.php', 'top.php', 'stat.php', 'topics.php', 'batchsearchindex.php', 'biblioservice.php', 'https://wiki.mhut.org/software:libgen_desktop', '/code/', '/soft/', '/import/', 'https://z-library.se/fulltext/', 'topics.php', '#', 'http://sci-hub.ru', 'http://magzdb.org', 'http://nlr.ru/rlin/Periodika_rus.php', 'http://rsl.ru/', 'http://loc.gov/', 'https://comicvine.gamespot.com/', 'http://cyberleninka.ru/', 'http://lib.rus.ec/', 'http://flibusta.is/', 'http://goodreads.com/', 'http://worldcat.org/', 'https://wiki.archiveteam.org/', 'https://www.reddit.com/r/libgen/', 'http://annas-archive.org/', 'https://welib.org/', 'https://open-slum.org/', 'index.php?req=mode:req&curtab=e', 'setlang.php?md5=dd531d3b702a951c8c899228e8ea8800&lang=ru', 'get.php?md5=dd531d3b702a951c8c899228e8ea8800&key=3BMOPV4AJWMTGHE4', '/covers/1509000/dd531d3b702a951c8c899228e8ea8800.jpg', 'https://www.worldcat.org/search?qt=worldcat_org_bks&q=Motorcycle%20Dynamics&fq=dt%3Abks', 'https://www.goodreads.com/search?utf8=✓&query=Motorcycle%20Dynamics', 'https://www.abebooks.com/servlet/SearchResults?tn=Motorcycle%20Dynamics&pt=book&cm_sp=pan-_-srp-_-ptbook', '#', '#', '#', 'bitcoin://bc1qlv9lwa5vncm2jjrxyhddfcvu0z3u5vn0s9672r', 'monero:48WhyKv4D9x53SyDFNYuMsHsDzuHXEcht4mWoFtXtE3k4KZ3A7goi3CQWBQQZ3A8PSK7CpwnAFKLnfGiZTAbEpcaCQCghvN']
+  js replace urls: []
+  onclick urls: []
+  GET https://libgen.bzrss/index.php err ConnectionError
+  GET https://libgen.bzimg/favicon.ico err ConnectionError
+  GET https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css -> 200 len=160392 ctype=text/css; charset=utf-8
+      cd= magic=b'/*!\n *'
+  GET https://libgen.bzcss/font.min.css err ConnectionError
+  GET https://libgen.bzcss/dark-mode.css err ConnectionError
+  GET https://libgen.bzindex.php err ConnectionError
+  GET https://libgen.bzcommunity/app.php/article/news err ConnectionError
+  GET https://libgen.bzcommunity/ err ConnectionError
+  GET https://libgen.bzcommunity/ucp.php?mode=login err ConnectionError
+  GET https://libgen.bzcommunity/ucp.php?mode=register err ConnectionError
+  GET https://libgen.bz# -> 200 len=28470 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.bzmirrors.php err ConnectionError
+  GET http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/ err ConnectionError
+  GET https://libgen.bztorrents/ err ConnectionError
+  GET https://ipdl.cat/data/torrents.html err ConnectionError
+  GET https://libgen.bznzb/ err ConnectionError
+  GET https://libgen.bzsoft/ err ConnectionError
+  GET https://libgen.bzdirlist.php?dir=dbdumps err ConnectionError
+  GET http://libgen.rs/dbdumps/ err ConnectTimeout
+  GET https://libgen.bzmagz0/ err ConnectionError
+  GET https://libgen.bzfict0/ err ConnectionError
+  GET https://libgen.bzcomics4/ err ConnectionError
+  GET https://libgen.bzlibrarian.php err ConnectionError
+  GET https://libgen.bzftp://ftp.libgen.bz/upload/ err ConnectionError
+  GET https://libgen.bzindex.php?req=fmode:last&topics1=all err ConnectionError
+  GET https://libgen.bzindex.php?req=fmode:last&topics1=all err ConnectionError
+  GET https://libgen.bzindex.php?req=fmode:last&topics%5B%5D=l err ConnectionError
+  GET https://libgen.bzindex.php?req=fmode:last&topics%5B%5D=a err ConnectionError
+  GET https://libgen.bzindex.php?req=fmode:last&topics%5B%5D=f err ConnectionError
+  GET https://libgen.bzindex.php?req=fmode:last&topics%5B%5D=c err ConnectionError
+  GET https://libgen.bzindex.php?req=fmode:last&topics%5B%5D=m err ConnectionError
+  GET https://libgen.bzindex.php?req=fmode:last&topics%5B%5D=s err ConnectionError
+  GET https://libgen.bzindex.php?req=fmode:last&topics%5B%5D=r err ConnectionError
+  GET https://libgen.bzindex.php?req=mode:last&curtab=e err ConnectionError
+  GET https://libgen.bzindex.php?req=mode:last&curtab=s err ConnectionError
+  GET https://libgen.bzindex.php?req=mode:last&curtab=p err ConnectionError
+  GET https://libgen.bzindex.php?req=mode:last&curtab=f err ConnectionError
+  GET https://libgen.bzindex.php?req=mode:last&curtab=a err ConnectionError
+  GET https://libgen.bzindex.php?req=mode:last&curtab=w err ConnectionError
+  GET https://libgen.bz# -> 200 len=28470 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.bzjson.php err ConnectionError
+  GET https://libgen.bzrss.php err ConnectionError
+  GET https://libgen.bztop.php err ConnectionError
+  GET https://libgen.bzstat.php err ConnectionError
+  GET https://libgen.bztopics.php err ConnectionError
+  GET https://libgen.bzbatchsearchindex.php err ConnectionError
+  GET https://libgen.bzbiblioservice.php err ConnectionError
+  GET https://wiki.mhut.org/software:libgen_desktop err ConnectTimeout
+  GET https://libgen.bzcode/ err ConnectionError
+  GET https://libgen.bzsoft/ err ConnectionError
+  GET https://libgen.bzimport/ err ConnectionError
+  GET https://z-library.se/fulltext/ err ConnectTimeout
+  GET https://libgen.bztopics.php err ConnectionError
+  GET https://libgen.bz# -> 200 len=28470 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET http://sci-hub.ru -> 200 len=154576 ctype=text/html; charset=UTF-8
+      cd= magic=b'<!DOCT'
+  GET http://magzdb.org -> 402 len=562 ctype=text/html
+      cd= magic=b'<html>'
+  GET http://nlr.ru/rlin/Periodika_rus.php -> 200 len=22943 ctype=text/html; charset=windows-125
+      cd= magic=b'<!DOCT'
+  GET http://rsl.ru/ -> 200 len=505558 ctype=text/html;charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://loc.gov/ -> 200 len=77590 ctype=text/html
+      cd= magic=b'<!DOCT'
+  GET https://comicvine.gamespot.com/ -> 403 len=5658 ctype=text/html; charset=UTF-8
+      cd= magic=b'<!DOCT'
+  GET http://cyberleninka.ru/ -> 200 len=16236 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://lib.rus.ec/ -> 200 len=104907 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://flibusta.is/ -> 200 len=47953 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://goodreads.com/ -> 200 len=56003 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://worldcat.org/ -> 200 len=459856 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET https://wiki.archiveteam.org/ -> 200 len=55156 ctype=text/html; charset=UTF-8
+      cd= magic=b'<!DOCT'
+  GET https://www.reddit.com/r/libgen/ -> 403 len=190240 ctype=text/html
+      cd= magic=b'<body '
+  GET http://annas-archive.org/ err ConnectionError
+  GET https://welib.org/ -> 200 len=443512 ctype=text/html; charset=utf-8
+      cd= magic=b'<!doct'
+  GET https://open-slum.org/ -> 200 len=116322 ctype=text/html
+      cd= magic=b'<!DOCT'
+  GET https://libgen.bzindex.php?req=mode:req&curtab=e err ConnectionError
+  GET https://libgen.bzsetlang.php?md5=dd531d3b702a951c8c899228e8ea8800&lang=ru err ConnectionError
+  GET https://libgen.bzget.php?md5=dd531d3b702a951c8c899228e8ea8800&key=3BMOPV4AJWMTGH err ConnectionError
+  GET https://libgen.bzcovers/1509000/dd531d3b702a951c8c899228e8ea8800.jpg err ConnectionError
+  GET https://www.worldcat.org/search?qt=worldcat_org_bks&q=Motorcycle%20Dynamics&fq=dt%3Abks -> 200 len=262105 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET https://www.goodreads.com/search?utf8=✓&query=Motorcycle%20Dynamics -> 202 len=0 ctype=text/html; charset=UTF-8
+      cd= magic=b''
+  GET https://www.abebooks.com/servlet/SearchResults?tn=Motorcycle%20Dynamics&pt=book&cm_sp=pan- -> 200 len=801511 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET https://libgen.bz# -> 200 len=28470 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.bz# -> 200 len=28470 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.bz# -> 200 len=28470 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.bzbitcoin://bc1qlv9lwa5vncm2jjrxyhddfcvu0z3u5vn0s9672r err ConnectionError
+  GET https://libgen.bzmonero:48WhyKv4D9x53SyDFNYuMsHsDzuHXEcht4mWoFtXtE3k4KZ3A7goi3CQ err InvalidURL
 
-written results/v12_report.json
+===== https://libgen.vg/get.php?md5=dd531d3b702a951c8c899228e8ea8800 =====
+  200 len=20555
+  saved results/getpage_libgen_vg.html
+  meta refresh: []
+  <a> links: 71
+    [a|] /index.php
+    [a|NEWS (current)] /community/app.php/article/news
+    [a|FORUM (current)] /community/
+    [a|LOGIN] /community/ucp.php?mode=login
+    [a|Register] /community/ucp.php?mode=register
+    [a|DOWNLOAD] #
+    [a|Mirrors] /mirrors.php
+    [a|TOR] http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/
+    [a|Torrents] /torrents/
+    [a|Torrents status] https://ipdl.cat/data/torrents.html
+    [a|Usenet (*.nzb)] /nzb/
+    [a|Soft] /soft/
+    [a|Libgen] /dirlist.php?dir=dbdumps
+    [a|libgen.rs (gen.lib.rus.ec)] http://libgen.rs/dbdumps/
+    [a|UPLOAD] librarian.php
+    [a|FTP] ftp://ftp.libgen.bz/upload/
+    [a|LAST] /index.php?req=fmode:last&topics1=all
+    [a|Files] /index.php?req=fmode:last&topics1=all
+    [a|Libgen] /index.php?req=fmode:last&topics%5B%5D=l
+    [a|Scientific Articles] /index.php?req=fmode:last&topics%5B%5D=a
+    [a|Fiction] /index.php?req=fmode:last&topics%5B%5D=f
+    [a|Comics] /index.php?req=fmode:last&topics%5B%5D=c
+    [a|Magazines] /index.php?req=fmode:last&topics%5B%5D=m
+    [a|Standards] /index.php?req=fmode:last&topics%5B%5D=s
+    [a|Fiction RUS] /index.php?req=fmode:last&topics%5B%5D=r
+    [a|Editions] /index.php?req=mode:last&curtab=e
+    [a|Series] /index.php?req=mode:last&curtab=s
+    [a|Publishers] /index.php?req=mode:last&curtab=p
+    [a|Authors] /index.php?req=mode:last&curtab=a
+    [a|Works] /index.php?req=mode:last&curtab=w
+  js location urls: ['/rss/index.php', '/img/favicon.ico', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css', '/css/font.min.css', '/css/dark-mode.css', '/index.php', '/community/app.php/article/news', '/community/', '/community/ucp.php?mode=login', '/community/ucp.php?mode=register', '#', '/mirrors.php', 'http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/', '/torrents/', 'https://ipdl.cat/data/torrents.html', '/nzb/', '/soft/', '/dirlist.php?dir=dbdumps', 'http://libgen.rs/dbdumps/', '/magz0/', '/fict0/', '/comics4/', 'librarian.php', 'ftp://ftp.libgen.bz/upload/', '/index.php?req=fmode:last&topics1=all', '/index.php?req=fmode:last&topics1=all', '/index.php?req=fmode:last&topics%5B%5D=l', '/index.php?req=fmode:last&topics%5B%5D=a', '/index.php?req=fmode:last&topics%5B%5D=f', '/index.php?req=fmode:last&topics%5B%5D=c', '/index.php?req=fmode:last&topics%5B%5D=m', '/index.php?req=fmode:last&topics%5B%5D=s', '/index.php?req=fmode:last&topics%5B%5D=r', '/index.php?req=mode:last&curtab=e', '/index.php?req=mode:last&curtab=s', '/index.php?req=mode:last&curtab=p', '/index.php?req=mode:last&curtab=f', '/index.php?req=mode:last&curtab=a', '/index.php?req=mode:last&curtab=w', '#', 'json.php', 'rss.php', 'top.php', 'stat.php', 'topics.php', 'batchsearchindex.php', 'biblioservice.php', 'https://wiki.mhut.org/software:libgen_desktop', '/code/', '/soft/', '/import/', 'https://z-library.se/fulltext/', 'topics.php', '#', 'http://sci-hub.ru', 'http://magzdb.org', 'http://nlr.ru/rlin/Periodika_rus.php', 'http://rsl.ru/', 'http://loc.gov/', 'https://comicvine.gamespot.com/', 'http://cyberleninka.ru/', 'http://lib.rus.ec/', 'http://flibusta.is/', 'http://goodreads.com/', 'http://worldcat.org/', 'https://wiki.archiveteam.org/', 'https://www.reddit.com/r/libgen/', 'http://annas-archive.org/', 'https://welib.org/', 'https://open-slum.org/', 'index.php?req=mode:req&curtab=e', 'setlang.php?md5=dd531d3b702a951c8c899228e8ea8800&lang=ru', 'get.php?md5=dd531d3b702a951c8c899228e8ea8800&key=6454WB54SNW92RZH', '/covers/1509000/dd531d3b702a951c8c899228e8ea8800.jpg', 'https://www.worldcat.org/search?qt=worldcat_org_bks&q=Motorcycle%20Dynamics&fq=dt%3Abks', 'https://www.goodreads.com/search?utf8=✓&query=Motorcycle%20Dynamics', 'https://www.abebooks.com/servlet/SearchResults?tn=Motorcycle%20Dynamics&pt=book&cm_sp=pan-_-srp-_-ptbook', '#', '#', '#', 'bitcoin://bc1qlv9lwa5vncm2jjrxyhddfcvu0z3u5vn0s9672r', 'monero:48WhyKv4D9x53SyDFNYuMsHsDzuHXEcht4mWoFtXtE3k4KZ3A7goi3CQWBQQZ3A8PSK7CpwnAFKLnfGiZTAbEpcaCQCghvN']
+  js replace urls: []
+  onclick urls: []
+  GET https://libgen.vgrss/index.php err ConnectionError
+  GET https://libgen.vgimg/favicon.ico err ConnectionError
+  GET https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css -> 200 len=160392 ctype=text/css; charset=utf-8
+      cd= magic=b'/*!\n *'
+  GET https://libgen.vgcss/font.min.css err ConnectionError
+  GET https://libgen.vgcss/dark-mode.css err ConnectionError
+  GET https://libgen.vgindex.php err ConnectionError
+  GET https://libgen.vgcommunity/app.php/article/news err ConnectionError
+  GET https://libgen.vgcommunity/ err ConnectionError
+  GET https://libgen.vgcommunity/ucp.php?mode=login err ConnectionError
+  GET https://libgen.vgcommunity/ucp.php?mode=register err ConnectionError
+  GET https://libgen.vg# -> 200 len=28470 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.vgmirrors.php err ConnectionError
+  GET http://libgenfrialc7tguyjywa36vtrdcplwpxaw43h6o63dmmwhvavo5rqqd.onion/ err ConnectionError
+  GET https://libgen.vgtorrents/ err ConnectionError
+  GET https://ipdl.cat/data/torrents.html err ConnectionError
+  GET https://libgen.vgnzb/ err ConnectionError
+  GET https://libgen.vgsoft/ err ConnectionError
+  GET https://libgen.vgdirlist.php?dir=dbdumps err ConnectionError
+  GET http://libgen.rs/dbdumps/ err ConnectTimeout
+  GET https://libgen.vgmagz0/ err ConnectionError
+  GET https://libgen.vgfict0/ err ConnectionError
+  GET https://libgen.vgcomics4/ err ConnectionError
+  GET https://libgen.vglibrarian.php err ConnectionError
+  GET https://libgen.vgftp://ftp.libgen.bz/upload/ err ConnectionError
+  GET https://libgen.vgindex.php?req=fmode:last&topics1=all err ConnectionError
+  GET https://libgen.vgindex.php?req=fmode:last&topics1=all err ConnectionError
+  GET https://libgen.vgindex.php?req=fmode:last&topics%5B%5D=l err ConnectionError
+  GET https://libgen.vgindex.php?req=fmode:last&topics%5B%5D=a err ConnectionError
+  GET https://libgen.vgindex.php?req=fmode:last&topics%5B%5D=f err ConnectionError
+  GET https://libgen.vgindex.php?req=fmode:last&topics%5B%5D=c err ConnectionError
+  GET https://libgen.vgindex.php?req=fmode:last&topics%5B%5D=m err ConnectionError
+  GET https://libgen.vgindex.php?req=fmode:last&topics%5B%5D=s err ConnectionError
+  GET https://libgen.vgindex.php?req=fmode:last&topics%5B%5D=r err ConnectionError
+  GET https://libgen.vgindex.php?req=mode:last&curtab=e err ConnectionError
+  GET https://libgen.vgindex.php?req=mode:last&curtab=s err ConnectionError
+  GET https://libgen.vgindex.php?req=mode:last&curtab=p err ConnectionError
+  GET https://libgen.vgindex.php?req=mode:last&curtab=f err ConnectionError
+  GET https://libgen.vgindex.php?req=mode:last&curtab=a err ConnectionError
+  GET https://libgen.vgindex.php?req=mode:last&curtab=w err ConnectionError
+  GET https://libgen.vg# -> 200 len=28470 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.vgjson.php err ConnectionError
+  GET https://libgen.vgrss.php err ConnectionError
+  GET https://libgen.vgtop.php err ConnectionError
+  GET https://libgen.vgstat.php err ConnectionError
+  GET https://libgen.vgtopics.php err ConnectionError
+  GET https://libgen.vgbatchsearchindex.php err ConnectionError
+  GET https://libgen.vgbiblioservice.php err ConnectionError
+  GET https://wiki.mhut.org/software:libgen_desktop err ConnectTimeout
+  GET https://libgen.vgcode/ err ConnectionError
+  GET https://libgen.vgsoft/ err ConnectionError
+  GET https://libgen.vgimport/ err ConnectionError
+  GET https://z-library.se/fulltext/ err ConnectTimeout
+  GET https://libgen.vgtopics.php err ConnectionError
+  GET https://libgen.vg# -> 200 len=28470 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET http://sci-hub.ru -> 200 len=166261 ctype=text/html; charset=UTF-8
+      cd= magic=b'<!DOCT'
+  GET http://magzdb.org -> 402 len=562 ctype=text/html
+      cd= magic=b'<html>'
+  GET http://nlr.ru/rlin/Periodika_rus.php -> 200 len=22943 ctype=text/html; charset=windows-125
+      cd= magic=b'<!DOCT'
+  GET http://rsl.ru/ -> 200 len=505558 ctype=text/html;charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://loc.gov/ -> 200 len=77763 ctype=text/html
+      cd= magic=b'<!DOCT'
+  GET https://comicvine.gamespot.com/ -> 403 len=5658 ctype=text/html; charset=UTF-8
+      cd= magic=b'<!DOCT'
+  GET http://cyberleninka.ru/ -> 200 len=16236 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://lib.rus.ec/ -> 200 len=104907 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://flibusta.is/ -> 200 len=47937 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://goodreads.com/ -> 200 len=56373 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET http://worldcat.org/ -> 200 len=459856 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET https://wiki.archiveteam.org/ -> 200 len=55156 ctype=text/html; charset=UTF-8
+      cd= magic=b'<!DOCT'
+  GET https://www.reddit.com/r/libgen/ -> 403 len=190240 ctype=text/html
+      cd= magic=b'<body '
+  GET http://annas-archive.org/ err ConnectionError
+  GET https://welib.org/ -> 200 len=443512 ctype=text/html; charset=utf-8
+      cd= magic=b'<!doct'
+  GET https://open-slum.org/ -> 200 len=116336 ctype=text/html
+      cd= magic=b'<!DOCT'
+  GET https://libgen.vgindex.php?req=mode:req&curtab=e err ConnectionError
+  GET https://libgen.vgsetlang.php?md5=dd531d3b702a951c8c899228e8ea8800&lang=ru err ConnectionError
+  GET https://libgen.vgget.php?md5=dd531d3b702a951c8c899228e8ea8800&key=6454WB54SNW92R err ConnectionError
+  GET https://libgen.vgcovers/1509000/dd531d3b702a951c8c899228e8ea8800.jpg err ConnectionError
+  GET https://www.worldcat.org/search?qt=worldcat_org_bks&q=Motorcycle%20Dynamics&fq=dt%3Abks -> 429 len=7838 ctype=text/html; charset=UTF-8
+      cd= magic=b'<!doct'
+  GET https://www.goodreads.com/search?utf8=✓&query=Motorcycle%20Dynamics -> 200 len=186122 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET https://www.abebooks.com/servlet/SearchResults?tn=Motorcycle%20Dynamics&pt=book&cm_sp=pan- -> 200 len=743310 ctype=text/html; charset=utf-8
+      cd= magic=b'<!DOCT'
+  GET https://libgen.vg# -> 200 len=28470 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.vg# -> 200 len=28470 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.vg# -> 200 len=28470 ctype=text/html; charset=UTF-8
+      cd= magic=b'\xef\xbb\xbf<!D'
+  GET https://libgen.vgbitcoin://bc1qlv9lwa5vncm2jjrxyhddfcvu0z3u5vn0s9672r err ConnectionError
+  GET https://libgen.vgmonero:48WhyKv4D9x53SyDFNYuMsHsDzuHXEcht4mWoFtXtE3k4KZ3A7goi3CQ err InvalidURL
+
+written results/v13_report.json
